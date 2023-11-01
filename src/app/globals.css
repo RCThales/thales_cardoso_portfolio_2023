@@ -1,0 +1,200 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media (prefers-color-scheme: dark) {
+}
+html {
+  scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden !important;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden !important;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar_animatedIn {
+    animation: navbarIn 0.3s;
+    display: block;
+  }
+
+  .navbar_animatedOut {
+    animation: navbarOut 0.3s;
+  }
+}
+
+@keyframes navbarIn {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes navbarOut {
+  from {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
+
+.hiddenNav {
+  display: none;
+}
+
+.responsive_title {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: clamp(1.5rem, 7vw, 3rem);
+}
+.hero_h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  animation: opa 0.2s ease-in-out 0s;
+}
+
+.navBarColor {
+  background-image: none;
+  background-color: transparent;
+}
+.darkNavBarColor {
+  background-image: none;
+  background-color: transparent;
+}
+
+.show.darkNavBarColor {
+  opacity: 0.95 !important;
+  background-color: rgb(24 24 27);
+}
+
+.show.navBarColor {
+  opacity: 0.95 !important;
+  background-color: rgb(228 228 231);
+}
+
+@keyframes navbarColorIn {
+  from {
+    filter: blur(0px);
+    opacity: 0;
+  }
+
+  to {
+    opacity: 0.5;
+    filter: blur(1px);
+  }
+}
+
+/* DEMO MOCKUPS */
+
+@media screen and (max-height: 1700px) {
+  .desktop_demo {
+    transform: scale(0.8) !important;
+  }
+  .mobile_demo {
+    transform: scale(0.8) !important;
+  }
+}
+@media screen and (max-height: 800px) {
+  .desktop_demo {
+    transform: scale(0.6) !important;
+  }
+  .mobile_demo {
+    transform: scale(0.6) !important;
+  }
+}
+@media screen and (max-width: 1500px) {
+  .desktop_demo {
+    transform: scale(0.6) !important;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .demo_wrapper {
+    height: 500px;
+  }
+  .desktop_demo {
+    display: none;
+  }
+
+  .mobile_demo {
+    transform: scale(0.5) !important;
+  }
+
+  .change_demo {
+    display: none;
+  }
+}
+
+.loader {
+  border: 16px solid #818181;
+  /* Light grey */
+  border-top: 16px solid #e0550a;
+  /* Blue */
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  animation: spin 2s ease-in-out infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.hero_bg::after {
+  content: "";
+  background-image: url("https://portfolio-bucket-thalescardoso.s3.amazonaws.com/watercolor_bg.png");
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+  background-position: center;
+  background-size: cover;
+}
+
+.loading_bg{
+    background-position: center;
+      background-size: cover;
+  background-image: url("https://static.vecteezy.com/system/resources/thumbnails/006/692/205/small/loading-icon-template-black-color-editable-loading-icon-symbol-flat-illustration-for-graphic-and-web-design-free-vector.jpg");
+}
+
+.custom-shape-divider-top-1698802899 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1698802899 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 38px;
+}
+
+.custom-shape-divider-top-1698802899 .shape-fill {
+  fill: rgb(228 228 231);
+}
+
+
