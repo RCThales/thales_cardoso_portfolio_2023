@@ -14,7 +14,7 @@ const Projects = () => {
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1200 120"
           preserveAspectRatio="none"
-          className="relative block w-full h-[38px]"
+          className="relative block w-full h-[38px] z-[99999999999999999999]"
         >
           <path
             d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
@@ -33,9 +33,9 @@ const Projects = () => {
             className="fill-current text-[rgb(228,228,231)] dark:text-zinc-900"
             xmlns="http://www.w3.org/2000/svg"
           ></path>
-
         </svg>
       </div>
+      <div className="h-[5px] bg-zinc-900 z-[-1] absolute top-[0px] left-0 w-full"></div>
       <div>
         <h1 className="responsive_title text-zinc-950 dark:text-zinc-200 text-center py-24 font-semibold">
           Interactive Demos

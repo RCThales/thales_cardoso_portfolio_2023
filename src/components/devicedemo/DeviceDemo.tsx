@@ -211,18 +211,18 @@ const DeviceDemo = ({ url }: any) => {
 
       {/* CARD */}
       <div className="m-10 flex flex-wrap justify-center items-center gap-10 mb-20">
-        <div className="bg-orange-500 max-w-[80vw]  lg:max-w-[90vw] w-[900px] h-auto shadow-lg flex flex-col relative justify-start lg:justify-center items-center text-gray-800 p-10 rounded-xl">
+        <div className="bg-orange-500 max-w-[95vw]  lg:max-w-[90vw] w-[900px] h-auto shadow-lg flex flex-col relative justify-start lg:justify-center items-center text-gray-800 p-10 rounded-xl">
           <h2 className="text-gray-800 dark:text-zinc-200  font-semibold uppercase text-3xl pb-10">
             Thales Boy
           </h2>
 
-          <ol className="p-10 bg-zinc-100 dark:bg-zinc-800 dark:text-zinc-200 rounded-lg shadow-zinc-600 dark:shadow-black shadow-md">
+          <ol className="p-10 bg-zinc-100 w-[90vw] md:w-[90%] lg:w-[90%] dark:bg-zinc-800 dark:text-zinc-200 rounded-lg shadow-zinc-600 dark:shadow-black shadow-md">
             <li className=" text-[1rem] list-disc p-4">
               <span className="font-semibold uppercase">Project Overview</span>
               <br />
               ThalesBoy is my brainchild—a recreation of the iconic Game Boy
               Color using Typescript and CSS. It boasts a 300x300 resolution,
-              allowing it to run web-based games seamlessly. Plus, it's
+              allowing it to run web-based games seamlessly. Plus, it&apos;s
               mobile-friendly, with button signals transmitted from the parent
               page to the child iframe component. The animation when the
               videogame is turned on is a gif animation created by myself using
@@ -240,7 +240,7 @@ const DeviceDemo = ({ url }: any) => {
               <span className="font-semibold uppercase">Future Goals</span>
               <br />
               Make it available for people to create their own games and push to
-              the project's GITHUB repository.
+              the project&apos;s GITHUB repository.
             </li>
           </ol>
           <br />

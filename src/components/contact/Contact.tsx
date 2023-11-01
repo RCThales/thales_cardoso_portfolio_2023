@@ -26,8 +26,8 @@ const Contact = () => {
         transition={{ duration: 0.5, delay: 0.1 }}
         className="dark:text-gray-100 text-zync-950 hero_h2 text-center p-9 w-screen lg:w-[80%] pointer-events-none z[999] font-light"
       >
-        Reach out and let's chat! Find my contact details below and drop me a
-        line.
+        Reach out and let&apos;s chat! Find my contact details below and drop me
+        a line.
       </motion.p>
       <motion.div
         initial={{ opacity: 0, translateY: -30 }}

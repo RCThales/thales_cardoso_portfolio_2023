@@ -10,6 +10,7 @@ const Resume = () => {
       id={"resume"}
       className="flex justify-center relative py-40 items-center flex-col gap-6 flex-wrap h-full w-screen z-[99] bg-zinc-100 dark:bg-zinc-800"
     >
+      <div className="h-[5px] bg-zinc-900  absolute top-[-5px] left-0 w-full"></div>
       <div className="absolute top-0 left-0 w-full overflow-hidden leading-0 transform">
         <svg
           data-name="Layer 1"
@@ -67,7 +68,7 @@ const Resume = () => {
           DOCx <FaRegFileWord></FaRegFileWord>
         </a>
       </motion.div>
-
+      <div className="h-[5px] bg-zinc-900  absolute bottom-[-4px] left-0 w-full"></div>
       <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-0 transform rotate-180">
         <svg
           data-name="Layer 1"
