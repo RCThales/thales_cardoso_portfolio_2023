@@ -5,10 +5,9 @@ import { useRef } from "react";
 import { useTheme } from "next-themes";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 const Navbar = () => {
-  const { theme } = useTheme();
+  const { theme, setTheme } = useTheme();
   const [updateTheme, setUpdateTheme] = useState(theme);
   const navbarToggle = useRef<any>();
   const navbarWrapper = useRef<any>();
@@ -38,6 +37,13 @@ const Navbar = () => {
 
   useEffect(() => {
     const navbarClasses = navbarWrapper?.current?.classList;
+    if (theme === "system") {
+      if (navbarClasses.contains("darkNavBarColor")) {
+        setTheme("dark");
+      } else {
+        setTheme("light");
+      }
+    }
     if (theme === "dark") {
       navbarClasses?.add("darkNavBarColor");
       navbarClasses?.remove("navBarColor");
