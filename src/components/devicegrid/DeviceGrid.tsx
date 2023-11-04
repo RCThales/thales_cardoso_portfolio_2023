@@ -22,7 +22,7 @@ const DeviceGrid = () => {
       />
       <DemoItems
         title="Burger Burger"
-        websitePic="https://portfolio-bucket-thalescardoso.s3.amazonaws.com/project_thalescardris.png"
+        websitePic="https://portfolio-bucket-thalescardoso.s3.amazonaws.com/burger+burger.png"
         delayNum={0.3}
         id="2"
       />

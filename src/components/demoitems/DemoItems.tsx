@@ -15,7 +15,7 @@ const DemoItems = ({ title, websitePic, delayNum, id }: any) => {
         href={"/item/" + id}
         className="h-auto flex flex-col justify-start  shadow-md dark:shadow-black shadow-zinc-400 hover:scale-[1.01] transition-all items-center lg:aspect-video w-[80vw] lg:w-[35vw] max-w-[90vw] bg-orange-600 rounded-md"
       >
-        <h3 className="text-3xl text-zinc-200 uppercase p-10"> {title}</h3>
+        <h3 className="text-3xl text-zinc-200 text-center uppercase p-10"> {title}</h3>
         <Image
           alt="Picture of the website"
           width={1000}
