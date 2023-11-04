@@ -271,7 +271,7 @@ const DeviceDemo = ({ url, title, cardInfo }: any) => {
               <br />
               <ol>
                 {cardInfo.roles.map((i: string) => {
-                  return <li className="">- {i}</li>;
+                  return <li key={"roles_"+url}>- {i}</li>;
                 })}
               </ol>
             </motion.li>
@@ -286,7 +286,11 @@ const DeviceDemo = ({ url, title, cardInfo }: any) => {
               <br />
               <ol>
                 {cardInfo.tech.map((i: string) => {
-                  return <li className="">- {i}</li>;
+                  return (
+                    <li key={"tech" + url}>
+                      - {i}
+                    </li>
+                  );
                 })}
               </ol>
             </motion.li>
