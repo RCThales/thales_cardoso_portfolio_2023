@@ -243,7 +243,7 @@ const DeviceDemo = ({ url, title, cardInfo }: any) => {
             whileInView={{ opacity: 1, translateY: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0 }}
-            className="text-gray-800 dark:text-zinc-200  font-semibold uppercase text-3xl pb-10"
+            className="text-gray-800 dark:text-zinc-200 text-center font-semibold uppercase text-2xl pb-10"
           >
             {title}
           </motion.h2>
