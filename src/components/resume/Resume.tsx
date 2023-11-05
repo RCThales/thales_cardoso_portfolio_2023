@@ -33,7 +33,7 @@ const Resume = () => {
         transition={{ duration: 0.5, delay: 0 }}
         className="responsive_title"
       >
-        Resume
+        Resumé
       </motion.h4>
       <motion.p
         initial={{ opacity: 0, translateY: -30 }}
@@ -41,7 +41,7 @@ const Resume = () => {
         transition={{ duration: 0.5, delay: 0.1 }}
         className="dark:text-gray-100 text-zync-950 hero_h2 text-center p-9 w-screen lg:w-[80%] pointer-events-none z[999] font-light"
       >
-        Get a sneak peek at my skills and experience by grabbing my resume
+        Get a sneak peek at my skills and experience by grabbing my resumé
         below!
       </motion.p>
 
@@ -54,7 +54,7 @@ const Resume = () => {
         <a
           download={true}
           target="_blank"
-          href="https://portfolio-bucket-thalescardoso.s3.amazonaws.com/Thales%2BCardoso_Resume_Web%2BDeveloper.pdf"
+          href="https://portfolio-bucket-thalescardoso.s3.amazonaws.com/ThalesCardoso_Resume_WebDeveloper.pdf"
           className="max-w-[70vw] w-[200px] text-[1.8rem] mt-10 text-center flex justify-center items-center gap-2 cursor-pointer bg-gradient-to-r from-orange-500 to-orange-600 hover:shadow-lg drop-shadow-lg hover:scale-105 active:scale-95 active:shadow-inner transition-all px-6 py-2 rounded-tl-2xl rounded-br-2xl rounded-tr-lg rounded-bl-lg text-gray-100 dark:text-zync-950 whitespace-nowrap"
         >
           PDF <FaRegFilePdf></FaRegFilePdf>
