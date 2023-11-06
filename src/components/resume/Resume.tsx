@@ -54,7 +54,7 @@ const Resume = () => {
         <a
           download={true}
           target="_blank"
-          href="https://portfolio-bucket-thalescardoso.s3.amazonaws.com/ThalesCardoso_Resume_WebDeveloper.pdf"
+          href={process.env.RESUME_PDF}
           className="max-w-[70vw] w-[200px] text-[1.8rem] mt-10 text-center flex justify-center items-center gap-2 cursor-pointer bg-gradient-to-r from-orange-500 to-orange-600 hover:shadow-lg drop-shadow-lg hover:scale-105 active:scale-95 active:shadow-inner transition-all px-6 py-2 rounded-tl-2xl rounded-br-2xl rounded-tr-lg rounded-bl-lg text-gray-100 dark:text-zync-950 whitespace-nowrap"
         >
           PDF <FaRegFilePdf></FaRegFilePdf>
@@ -62,7 +62,7 @@ const Resume = () => {
         <a
           download={true}
           target="_blank"
-          href="https://portfolio-bucket-thalescardoso.s3.amazonaws.com/ThalesCardoso_Resume_WebDeveloper.docx"
+          href={process.env.RESUME_DOC}
           className="max-w-[70vw] w-[200px] text-[1.8rem] flex justify-center items-center gap-2 mt-10 text-center cursor-pointer bg-gradient-to-r from-orange-500 to-orange-600 hover:shadow-lg drop-shadow-lg hover:scale-105 active:scale-95 active:shadow-inner transition-all px-6 py-2 rounded-tl-2xl rounded-br-2xl rounded-tr-lg rounded-bl-lg text-gray-100 dark:text-zync-950 whitespace-nowrap"
         >
           DOCx <FaRegFileWord></FaRegFileWord>
