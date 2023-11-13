@@ -77,6 +77,8 @@ const DeviceDemo = ({ url, title, cardInfo, pics }: any) => {
     }
   }
 
+
+
   return (
     <>
       <nav className="z-50 fixed top-4 left-4 ">
@@ -90,54 +92,12 @@ const DeviceDemo = ({ url, title, cardInfo, pics }: any) => {
       
       {bicBigPictureOpen && <BigPic pics={pics} id={pictureId} triggerPic={triggerBigPicture} next={nextPicture} previous={previousPicture}></BigPic>}
 
-      <h2 className="responsive_title_normal py-10">GALLERY</h2>
-      {/* GALLERY */}
-      <div className="flex justify-center items-center w-full py-10 pb-40 lg:pb-40 relative">
-
-        <div className="flex justify-center items-center gap-10 w-full flex-wrap relative ">
-          {pics?.map((picUrl : string, index : number) => {
-            return (
-              <motion.button     
-              initial={{ opacity: 0, translateY: -30 }}
-              whileInView={{ opacity: 1, translateY: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index/10 }}
-              key={"proj_pic_gallery"+index} className="relative w-[80%] lg:w-[40%] min-w-[300px] h-auto max-w-[90vw] hover:scale-[1.01] transition-all" onClick={() => triggerBigPicture(index)}>
-                <div className="border-2 border-black rounded-md h-[100%] z-[-1] w-[100%] absolute left-[-15px] top-[-15px] opacity-25 dark:border-gray-50"></div>
-                <div className="border-2 border-black rounded-md h-[20px] w-[20px]  absolute right-[-10px] bottom-[50px] opacity-25 dark:border-gray-50"></div>
-                <div className="border-2 border-black rounded-md h-[20px] w-[20px]  z-[-1] absolute right-[-10px] bottom-[20px] opacity-25 dark:border-gray-50"></div>
-                <div className="border-2 border-black rounded-md h-[20px] w-[20px] absolute right-[15px] bottom-[30px] opacity-25 dark:border-gray-50"></div>
-                <Image className="rounded-xl w-full h-auto" src={picUrl} width={1500} height={1500} alt="Mockup of the project"></Image>
-              </motion.button>
-            )
-          })}
-        </div>
-       
-     
-        <div className="h-[5px] bg-zinc-200 dark:bg-zinc-900  absolute bottom-[-4px] w-screen"></div>
-        <div className="absolute bottom-0 w-screen overflow-hidden leading-0 transform rotate-180 ">
-          <svg
-            data-name="Layer 1"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 1200 120"
-            preserveAspectRatio="none"
-            className="relative block w-full h-[38px]"
-          >
-            <path
-              d="M1200 0L0 0 892.25 114.72 1200 0z"
-              className="fill-current text-[rgb(228,228,231)] dark:text-zinc-900"
-              xmlns="http://www.w3.org/2000/svg"
-            ></path>
-          </svg>
-        </div>
-      </div>
-
       {/* INTERACTIVE DEMOS */}
-      <div className="flex flex-col items-center justify-center w-screen bg-zinc-200 dark:bg-zinc-900 pb-20 py-10 lg:pb-10">
+      <div className="flex flex-col items-center justify-center w-screen  pb-20 py-10 lg:pb-10 relative">
         
         <h2 className="responsive_title_normal py-10">INTERACTIVE DEMOS</h2>
         <p className="max-w-[70vw] text-center text-xl font-light">
-            PS: This device ACTUALLY works and was made by me with TAILWIND!
+            PS: This device ACTUALLY works and was made by me with TAILWIND! <br /><br />  You can also go to the actual webiste clicking the button below =)
         </p>
         <div className="flex justify-center flex-wrap items-center gap-6 p-14 pb-20 lg:pb-10">
           {/* Buttons for device */}
@@ -167,11 +127,13 @@ const DeviceDemo = ({ url, title, cardInfo, pics }: any) => {
             className="max-w-[70vw] w-[230px] text-[1.3rem]  flex justify-center items-center text-center cursor-pointer bg-gradient-to-r
             border-orange-500 border-2 drop-shadow-lg hover:scale-105 active:scale-95
               active:shadow-inner transition-all px-6 py-2 rounded-tl-2xl rounded-br-2xl rounded-tr-lg rounded-bl-lg
-              text-zinc-800 dark:text-zync-950 whitespace-nowrap dark:text-gray-200"
+              text-zinc-800 dark:text-zync-950 whitespace-nowrap dark:text-gray-200 hover:bg-orange-500 hover:dark:text-black"
           >
             Go To Website
           </motion.a>
         </div>
+
+   
 
         {/* DEVICE DEMOS */}
         <motion.div
@@ -179,8 +141,9 @@ const DeviceDemo = ({ url, title, cardInfo, pics }: any) => {
           whileInView={{ opacity: 1, translateY: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0 }}
-          className="demo_wrapper pb-10 flex justify-center items-center"
+          className="demo_wrapper pb-10 flex justify-center items-center relative"
         >
+          <p className="text-3xl absolute top-[-40px] z-50 lg:top-10 font-semibold">TRY ME ↓</p>
           {/* PHONE */}
           {deviceMode === "mobile" && (
             <motion.div
@@ -188,7 +151,7 @@ const DeviceDemo = ({ url, title, cardInfo, pics }: any) => {
               animate={{ opacity: 1, translateY: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0 }}
-              className="mobile_demo bg-gray-900 relative border-gray-300 border-[8px] w-[500px] h-[1000px] shadow-lg shadow-gray-800 flex flex-col justify-center items-center lg:translate-y-[0%] text-black p-4 rounded-[70px]"
+              className="mobile_demo bg-gray-900 relative border-gray-300 border-[8px]  w-[500px] h-[1000px] shadow-lg shadow-gray-800 flex flex-col justify-center items-center lg:translate-y-[0%] text-black p-4 rounded-[70px]"
             >
               <div className="h-[30px] w-[20%] bg-black rounded-full absolute top-[25px]"></div>
               <span className="absolute top-[25px] left-[20%]">
@@ -319,8 +282,52 @@ const DeviceDemo = ({ url, title, cardInfo, pics }: any) => {
           )}
         </motion.div>
 
-   
+        <div className="h-[5px] bg-zinc-200 dark:bg-zinc-900  absolute bottom-[-4px] w-screen"></div>
+        <div className="absolute bottom-0 w-screen overflow-hidden leading-0 transform rotate-180 ">
+          <svg
+            data-name="Layer 1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1200 120"
+            preserveAspectRatio="none"
+            className="relative block w-full h-[38px]"
+          >
+            <path
+              d="M1200 0L0 0 892.25 114.72 1200 0z"
+              className="fill-current text-[rgb(228,228,231)] dark:text-zinc-900"
+              xmlns="http://www.w3.org/2000/svg"
+            ></path>
+          </svg>
+        </div>
+      <div className="py-20 lg:py-0"></div>
       </div>
+
+      {/* GALLERY */}
+
+      <div className="flex flex-col justify-center items-center w-full py-10 pb-40 lg:pb-40 relative bg-zinc-200 dark:bg-zinc-900">
+        <h2 className="responsive_title_normal py-10 text-center">GALLERY</h2>
+        <div className="flex justify-center items-center gap-10 w-full flex-wrap relative ">
+          {pics?.map((picUrl : string, index : number) => {
+            return (
+              <motion.button     
+              initial={{ opacity: 0, translateY: -30 }}
+              whileInView={{ opacity: 1, translateY: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index/10 }}
+              key={"proj_pic_gallery"+index} className="relative w-[80%] lg:w-[40%] aspect-video min-w-[300px] max-h-[300px] h-auto max-w-[90vw] hover:scale-[1.01] transition-all" onClick={() => triggerBigPicture(index)}>
+                <div className="border-2 border-black rounded-md h-[100%] aspect-video z-[-1] w-[100%] absolute left-[-15px] top-[-15px] opacity-25 dark:border-gray-50"></div>
+                <div className="border-2 border-black rounded-md h-[20px] w-[20px]  absolute right-[-10px] bottom-[50px] opacity-25 dark:border-gray-50"></div>
+                <div className="border-2 border-black rounded-md h-[20px] w-[20px]  z-[-1] absolute right-[-10px] bottom-[20px] opacity-25 dark:border-gray-50"></div>
+                <div className="border-2 border-black rounded-md h-[20px] w-[20px] absolute right-[15px] bottom-[30px] opacity-25 dark:border-gray-50"></div>
+                <Image className="rounded-xl w-full h-auto" src={picUrl} width={1500} height={1500} alt="Mockup of the project"></Image>
+              </motion.button>
+            )
+          })}
+        </div>
+       
+     
+      </div>
+
+
 
       {/* PROJECT INFO */}    
       <div className="flex flex-col items-center justify-center w-screen relative py-10">

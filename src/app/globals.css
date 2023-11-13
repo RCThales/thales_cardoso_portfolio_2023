@@ -135,7 +135,8 @@ body {
   }
 
   .mobile_demo {
-    transform: scale(0.55) !important;
+    margin-top: 200px;
+    transform: scale(0.6) !important;
   }
 
   .change_demo {
