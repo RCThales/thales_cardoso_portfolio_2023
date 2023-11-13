@@ -1,6 +1,3 @@
-import Hero from "@/components/hero/Hero";
-import Projects from "@/components/projects/Projects";
-import Image from "next/image";
 import DeviceDemo from "@/components/devicedemo/DeviceDemo";
 export default function ItemPage({ params }: any) {
   const title: any = {
@@ -17,6 +14,17 @@ export default function ItemPage({ params }: any) {
     "3": "https://thalescardris.com/",
   };
 
+  const pics: any = {
+    "0": ["https://portfolio-bucket-thalescardoso.s3.amazonaws.com/thalesboy_sc_1.png", "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/thalesboy_sc_2.png",
+  "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/thalesboy_sc_3.png", "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/thalesboy_sc_4.png"],
+    "1": ["https://portfolio-bucket-thalescardoso.s3.amazonaws.com/Projects/batour1.jpg", "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/batour_sc_3.png" , 
+  "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/batour_ps_2.png", "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/batour_sc_4.png" ],
+    "2": ["https://portfolio-bucket-thalescardoso.s3.amazonaws.com/bb_sc_1.png", "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/bb_sc_2.png", 
+  "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/bb_sc_3.png", "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/bb_sc_4.png"],
+    "3": ["https://portfolio-bucket-thalescardoso.s3.amazonaws.com/cardris_sc_1.png", "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/cardris_sc_2.png",
+  "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/cardris_sc_3.png", "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/cardris_sc_4.png"],
+  };
+
   const cardInfo: any = {
     "0": {
       overview:
@@ -26,6 +34,7 @@ export default function ItemPage({ params }: any) {
         "Make it available for people to create their own games and push to the project's GITHUB repository.",
       repo: "https://github.com/RCThales/ThalesBoy",
       roles: ["Development", "Design"],
+
     },
 
     "1": {
@@ -41,6 +50,7 @@ export default function ItemPage({ params }: any) {
         "Typesense (Not on the demo due to the cluster costs)",
       ],
       roles: ["Development", "Design"],
+
       goals:
         "Through Batour, I independently crafted a robust e-commerce website, showcasing my proficiency in web development, UI/UX design, and database management. The platform prioritizes security, performance, and scalability. For potential hiring companies, Batour demonstrates my end-to-end development skills, problem-solving abilities, and a commitment to leveraging technology for social impact.",
       repo: "https://github.com/RCThales/Batour-Official-Website",
@@ -50,6 +60,7 @@ export default function ItemPage({ params }: any) {
         "BurgerBurger, is my showcase of sleek web development (It serves as the official website for BURGER BURGER, a company located in London, Ontario). With an intuitive UI and responsive design (created by the designer Ray Ruas), it's more than a menu—it's a snapshot of my frontend proficiency. Efficient backend? Check. Smooth transactions? Absolutely. BurgerBurger demonstrates my commitment to top-notch user experiences and cutting-edge tech.",
       tech: ["Javascript | Typescript", "REACT", "Next.JS", "Tailwind", "S3"],
       roles: ["Development"],
+    
       goals:
         "With BurgerBurger, I achieved the creation of a seamless web application hosted on Vercel. This project showcases my technical prowess in frontend development, highlighting an intuitive UI and responsive design. Under the hood, the backend efficiently manages orders and transactions. BurgerBurger is a concise representation of my ability to deliver high-quality user experiences while leveraging the latest technologies for optimal performance.",
       repo: "https://github.com/RCThales/burgerburger_website",
@@ -59,6 +70,7 @@ export default function ItemPage({ params }: any) {
         "ThalesCardris is my musical side hustle portfolio—an online testament to my skills in web design and development. With a sleek layout and seamless user experience, it showcases my commitment to excellence in both music and digital craftsmanship. Check it out for a blend of creativity and technical precision.",
       tech: ["Javascript | Typescript", "REACT", "Next.JS", "Tailwind", "S3"],
       roles: ["Development", "Design"],
+    
       goals:
         "ThalesCardris features a sleek sidebar design that enhances both functionality and aesthetics. Carefully curated for quick navigation, it seamlessly integrates with the overall modern and polished look of the site. The sidebar is not just a navigation tool; it's a deliberate design choice that reflects my attention to detail and commitment to a seamless user experience.",
       repo: "https://github.com/RCThales/cardrisportfolio",
@@ -66,23 +78,21 @@ export default function ItemPage({ params }: any) {
   };
 
   return (
-    <main className="flex min-h-screen  flex-col items-center justify-between">
+    <main className="flex min-h-screen  flex-col items-center justify-between overflow-hidden">
+
       <section
         id="home"
-        className="h-auto flex-col pt-10 w-screen flex relative min-h-screen hero_bg
-      items-center justify-start"
+        className="h-auto flex-col pt-10 w-screen flex relative min-h-screen hero_bg items-center justify-start"
       >
-        <h1 className="responsive_title  text-center text-zinc-950 dark:text-gray-200 z-10 p-10 font-semibold">
+        <h1 className="responsive_title text-center text-zinc-950 dark:text-gray-200 z-10 p-10 font-semibold">
           {title[params?.id]}
         </h1>
-        <p className="max-w-[70vw] text-center text-xl font-light">
-          PS: These interactive demos below were made by me entirely in CSS!
-          Have fun testing it out!
-        </p>
+
         <DeviceDemo
           cardInfo={cardInfo[params?.id]}
           title={title[params?.id]}
           url={url[params?.id]}
+          pics={pics[params?.id]}
         ></DeviceDemo>
       </section>
     </main>

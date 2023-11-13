@@ -87,7 +87,7 @@ const Hero = () => {
           className="z-[1] w-[50%] flex justify-center items-center lg:w-[40%] pointer-events-none"
         >
           <Image
-            className="w-[90vw] lg:w-[850px] max-w-[100%] pt-20 z[999999] rounded-full "
+            className="w-[90vw] lg:w-[900px] max-w-[100%] pt-20 z[999999] rounded-full "
             width={1000}
             height={1000}
             alt="Thales' picture with artistic effects."
