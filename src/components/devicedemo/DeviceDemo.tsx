@@ -90,19 +90,25 @@ const DeviceDemo = ({ url, title, cardInfo, pics }: any) => {
       
       {bicBigPictureOpen && <BigPic pics={pics} id={pictureId} triggerPic={triggerBigPicture} next={nextPicture} previous={previousPicture}></BigPic>}
 
+      <h2 className="responsive_title_normal py-10">GALLERY</h2>
       {/* GALLERY */}
       <div className="flex justify-center items-center w-full py-10 pb-40 lg:pb-40 relative">
 
         <div className="flex justify-center items-center gap-10 w-full flex-wrap relative ">
           {pics?.map((picUrl : string, index : number) => {
             return (
-              <button key={"proj_pic"+index} className="relative w-[80%] lg:w-[40%] min-w-[300px] h-auto max-w-[90vw] hover:scale-[1.01] transition-all" onClick={() => triggerBigPicture(index)}>
+              <motion.button     
+              initial={{ opacity: 0, translateY: -30 }}
+              whileInView={{ opacity: 1, translateY: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index/10 }}
+              key={"proj_pic_gallery"+index} className="relative w-[80%] lg:w-[40%] min-w-[300px] h-auto max-w-[90vw] hover:scale-[1.01] transition-all" onClick={() => triggerBigPicture(index)}>
                 <div className="border-2 border-black rounded-md h-[100%] z-[-1] w-[100%] absolute left-[-15px] top-[-15px] opacity-25 dark:border-gray-50"></div>
                 <div className="border-2 border-black rounded-md h-[20px] w-[20px]  absolute right-[-10px] bottom-[50px] opacity-25 dark:border-gray-50"></div>
                 <div className="border-2 border-black rounded-md h-[20px] w-[20px]  z-[-1] absolute right-[-10px] bottom-[20px] opacity-25 dark:border-gray-50"></div>
                 <div className="border-2 border-black rounded-md h-[20px] w-[20px] absolute right-[15px] bottom-[30px] opacity-25 dark:border-gray-50"></div>
                 <Image className="rounded-xl w-full h-auto" src={picUrl} width={1500} height={1500} alt="Mockup of the project"></Image>
-              </button>
+              </motion.button>
             )
           })}
         </div>
@@ -127,7 +133,7 @@ const DeviceDemo = ({ url, title, cardInfo, pics }: any) => {
       </div>
 
       {/* INTERACTIVE DEMOS */}
-      <div className="flex flex-col items-center justify-center w-screen bg-zinc-200 dark:bg-zinc-900">
+      <div className="flex flex-col items-center justify-center w-screen bg-zinc-200 dark:bg-zinc-900 pb-20 py-10 lg:pb-10">
         
         <h2 className="responsive_title_normal py-10">INTERACTIVE DEMOS</h2>
         <p className="max-w-[70vw] text-center text-xl font-light">
