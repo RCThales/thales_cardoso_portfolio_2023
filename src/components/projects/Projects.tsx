@@ -38,7 +38,7 @@ const Projects = () => {
       <div className="h-[5px] bg-zinc-200 dark:bg-zinc-900 z-[-1] absolute top-[0px] left-0 w-full"></div>
       <div>
         <h1 className="responsive_title text-zinc-950 dark:text-zinc-200 text-center py-24 font-semibold">
-          Interactive Demos
+          Projects
         </h1>
         {/* PROJECT 1 */}
         <DeviceGrid></DeviceGrid>

@@ -35,7 +35,7 @@ const BigPic = ({ pics, id, triggerPic, previous, next }: any) => {
                         <Image className="rounded-xl pointer-events-none" src={"https://portfolio-bucket-thalescardoso.s3.amazonaws.com/arrow-left.svg"} width={1500} height={1500} alt="Mockup of the project"></Image>
                     </button>   
                 
-                    <Image className="rounded-xl w-auto h-[80%] lg:h-[100%]   pointer-events-none" src={pics[id]} width={1500} height={1500} alt="Mockup of the project"></Image>
+                    <Image className="rounded-xl max-w-[95%] w-auto h-[80%] lg:h-[100%]   pointer-events-none" src={pics[id]} width={1500} height={1500} alt="Mockup of the project"></Image>
                     <button onClick={() => next(id)} className="hover:scale-[1.2] hidden lg:flex  w-[8%] max-w-[90px] transition-all pointer-events-auto z-[99999999999] dark:invert">
                         <Image className="rounded-xl pointer-events-none" src={"https://portfolio-bucket-thalescardoso.s3.amazonaws.com/arrow-right.svg"} width={1500} height={1500} alt="Mockup of the project"></Image>
                     </button>  
