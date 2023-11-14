@@ -41,6 +41,7 @@ const DemoItems = ({ title, websitePic, delayNum, id, techs }: any) => {
         {/*
         <p className="text-center p-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus magni unde enim cumque placeat ad repellendus beatae iusto distinctio inventore.</p>
          */}
+         <br />
       </Link>
     </motion.div>
   );
