@@ -341,7 +341,7 @@ const DeviceDemo = ({ url, title, cardInfo, pics }: any) => {
 
       {/* GALLERY */}
 
-      <div className="flex flex-col justify-center items-center w-full py-10 pb-40 lg:pb-40 relative bg-zinc-300 dark:bg-zinc-900">
+      <div className="flex flex-col justify-center items-center w-full py-10 pb-40 lg:pb-40 z-[0] relative bg-zinc-300 dark:bg-zinc-900">
         <h2 className="responsive_title_normal py-10 text-center">GALLERY</h2>
         <div className="flex justify-center items-center gap-10 w-full flex-wrap relative ">
           {pics?.map((picUrl : string, index : number) => {
@@ -356,7 +356,7 @@ const DeviceDemo = ({ url, title, cardInfo, pics }: any) => {
                 <div className="border-2 border-black rounded-md h-[20px] w-[20px]  absolute right-[-10px] bottom-[50px] opacity-25 dark:border-gray-50"></div>
                 <div className="border-2 border-black rounded-md h-[20px] w-[20px]  z-[-1] absolute right-[-10px] bottom-[20px] opacity-25 dark:border-gray-50"></div>
                 <div className="border-2 border-black rounded-md h-[20px] w-[20px] absolute right-[15px] bottom-[30px] opacity-25 dark:border-gray-50"></div>
-                <Image className="rounded-xl w-full h-auto" src={picUrl} width={1500} height={1500} alt="Mockup of the project"></Image>
+                <Image className="rounded-xl w-full h-auto z-[1]" src={picUrl} width={1500} height={1500} alt="Mockup of the project"></Image>
               </motion.button>
             )
           })}
