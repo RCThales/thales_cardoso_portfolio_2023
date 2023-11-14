@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import  Providers  from "./providers";
 import Theme from "@/components/theme/Theme";
+import { ToastContainer } from 'react-toastify';
 
 
 const poppins = Poppins({
@@ -23,10 +24,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={poppins.className}>
-        <Providers>
-          {children}
-          <Theme />
-        </Providers>
+          <Providers>
+            {children}
+            <Theme />
+          </Providers>
+        <ToastContainer />
       </body>
     </html>
   );

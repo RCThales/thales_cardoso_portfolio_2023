@@ -3,6 +3,8 @@
 import React, { useEffect, useState } from "react";
 import { LuMoon, LuSunMedium } from "react-icons/lu";
 import { useTheme } from "next-themes";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Theme = () => {
   const [mounted, setMounted] = useState(false);
@@ -18,6 +20,10 @@ const Theme = () => {
 
   const toggleTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark");
+    toast.success('Theme changed!', {
+      position: toast.POSITION.TOP_RIGHT,
+      autoClose: 2000, 
+    });
   };
 
   return (

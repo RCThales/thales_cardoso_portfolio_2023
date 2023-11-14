@@ -9,6 +9,8 @@ import { MdOutlineVideogameAsset } from "react-icons/md";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import BigPic from "../bigpic/BigPic";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const DeviceDemo = ({ url, title, cardInfo, pics }: any) => {
   const [currentHour, setCurrentHour] = useState(getCurrentHour());
@@ -77,6 +79,22 @@ const DeviceDemo = ({ url, title, cardInfo, pics }: any) => {
     }
   }
 
+  const copyText = async (text : string) => {
+    try {
+      await navigator.clipboard.writeText(text);
+        toast.success('Information copied!', {
+          position: toast.POSITION.TOP_RIGHT,
+          autoClose: 2000, 
+        });
+
+    } catch (error) {
+      await navigator.clipboard.writeText(text);
+      toast.error('Unable to copy text!', {
+        position: toast.POSITION.TOP_RIGHT,
+        autoClose: 2000, 
+      });
+    }
+  };
 
 
   return (
@@ -92,11 +110,31 @@ const DeviceDemo = ({ url, title, cardInfo, pics }: any) => {
       
       {bicBigPictureOpen && <BigPic pics={pics} id={pictureId} triggerPic={triggerBigPicture} next={nextPicture} previous={previousPicture}></BigPic>}
 
+      {title === "Batour" &&     
+      <motion.div         
+      initial={{ opacity: 0,  translateY: -30 }}
+      whileInView={{ opacity: 1,  translateY: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: 0 }}
+      className="flex w-fit flex-col justify-center items-center max-w-[90vw] gap-4 bg-zinc-300 dark:bg-zinc-900 p-20 rounded-tl-3xl shadow-zinc-500 dark:shadow-black shadow-md rounded-br-3xl">
+       <h3 className="text-2xl bg-red-600 rounded-xl p-4 max-w-[85vw] text-zinc-50">PS: You can only test the PURCHASE feature on the actual website, not on the demo below!</h3>
+       <p className="text-xl max-w-[85vw] text-zinc-950 dark:text-zinc-50">🤑To test it for free use this DEMO CREDIT CARD (click on the numbers to copy)</p>
+       <div className="w-[400px] flex justify-center flex-col items-center shadow-gray-900 shadow-md bg-gradient-to-r from-orange-300  via-orange-500 to-orange-600 rounded-md aspect-video">     
+          <h3 onClick={() => copyText("4242424242424242")} className="m-auto font-bold text-2xl cursor-pointer hover:scale-[1.05] text-zinc-950  transition-all">4242 4242 4242 4242</h3>
+          <div className="flex justify-evenly w-full">
+            <p onClick={() => copyText("10/50")} className="cursor-pointer hover:scale-[1.05] font-semibold text-zinc-950  transition-all">10/50</p>
+            <p onClick={() => copyText("999")} className="cursor-pointer hover:scale-[1.05] font-semibold text-zinc-950 transition-all">999</p>
+          </div>
+          <span className="h-[50px] w-full bg-gradient-to-r from-gray-600  via-gray-800 to-gray-900 mb-6 mt-2"></span>
+        </div>   
+      </motion.div>
+      }
+
       {/* INTERACTIVE DEMOS */}
       <div className="flex flex-col items-center justify-center w-screen  pb-20 py-10 lg:pb-10 relative">
         
         <h2 className="responsive_title_normal py-10">INTERACTIVE DEMOS</h2>
-        <p className="max-w-[70vw] text-center text-xl font-light">
+        <p className="max-w-[70vw] text-center text-xl font-nromal">
             PS: This device ACTUALLY works and was made by me with TAILWIND! <br /><br />  You can also go to the actual webiste clicking the button below =)
         </p>
         <div className="flex justify-center flex-wrap items-center gap-6 p-14 pb-20 lg:pb-10">
@@ -282,7 +320,7 @@ const DeviceDemo = ({ url, title, cardInfo, pics }: any) => {
           )}
         </motion.div>
 
-        <div className="h-[5px] bg-zinc-200 dark:bg-zinc-900  absolute bottom-[-4px] w-screen"></div>
+        <div className="h-[5px] bg-zinc-300 dark:bg-zinc-900  absolute bottom-[-4px] w-screen"></div>
         <div className="absolute bottom-0 w-screen overflow-hidden leading-0 transform rotate-180 ">
           <svg
             data-name="Layer 1"
@@ -293,7 +331,7 @@ const DeviceDemo = ({ url, title, cardInfo, pics }: any) => {
           >
             <path
               d="M1200 0L0 0 892.25 114.72 1200 0z"
-              className="fill-current text-[rgb(228,228,231)] dark:text-zinc-900"
+              className="fill-current text-zinc-300 dark:text-zinc-900"
               xmlns="http://www.w3.org/2000/svg"
             ></path>
           </svg>
@@ -303,7 +341,7 @@ const DeviceDemo = ({ url, title, cardInfo, pics }: any) => {
 
       {/* GALLERY */}
 
-      <div className="flex flex-col justify-center items-center w-full py-10 pb-40 lg:pb-40 relative bg-zinc-200 dark:bg-zinc-900">
+      <div className="flex flex-col justify-center items-center w-full py-10 pb-40 lg:pb-40 relative bg-zinc-300 dark:bg-zinc-900">
         <h2 className="responsive_title_normal py-10 text-center">GALLERY</h2>
         <div className="flex justify-center items-center gap-10 w-full flex-wrap relative ">
           {pics?.map((picUrl : string, index : number) => {
@@ -333,7 +371,7 @@ const DeviceDemo = ({ url, title, cardInfo, pics }: any) => {
       <div className="flex flex-col items-center justify-center w-screen relative py-10">
     
         <h2 className="responsive_title_normal  py-10 pt-20">PROJECT INFORMATION</h2>
-        <div className="h-[5px] bg-zinc-200 dark:bg-zinc-900  absolute top-[-4px] w-screen"></div>
+        <div className="h-[5px] bg-zinc-300 dark:bg-zinc-900  absolute top-[-4px] w-screen"></div>
         <div className="absolute top-0 left-0 w-full overflow-hidden leading-0 transform">
             <svg
               data-name="Layer 1"
@@ -344,7 +382,7 @@ const DeviceDemo = ({ url, title, cardInfo, pics }: any) => {
             >
               <path
                 d="M1200 0L0 0 892.25 114.72 1200 0z"
-                className="fill-current text-[rgb(228,228,231)] dark:text-zinc-900"
+                className="fill-current text-zinc-300 dark:text-zinc-900"
                 xmlns="http://www.w3.org/2000/svg"
               ></path>
             </svg>
@@ -353,7 +391,7 @@ const DeviceDemo = ({ url, title, cardInfo, pics }: any) => {
         <div className="m-10 flex flex-wrap justify-center items-center gap-10 mb-20">
           <div className="bg-orange-500 max-w-[95vw]  lg:max-w-[90vw] w-[900px] h-auto shadow-lg flex flex-col relative justify-start lg:justify-center items-center text-gray-800 p-10 rounded-xl">
 
-            <ol className="p-10 bg-zinc-100 w-[90vw] md:w-[90%] lg:w-[90%] dark:bg-zinc-800 dark:text-zinc-200 rounded-lg shadow-zinc-600 dark:shadow-black shadow-md">
+            <ol className="p-10 bg-zinc-100 w-[90vw] md:w-[90%] lg:w-[90%] dark:bg-zinc-900 dark:text-zinc-300 rounded-lg shadow-zinc-600 dark:shadow-black shadow-md">
               <motion.li
                 initial={{ opacity: 0, translateY: -30 }}
                 whileInView={{ opacity: 1, translateY: 0 }}
@@ -417,7 +455,7 @@ const DeviceDemo = ({ url, title, cardInfo, pics }: any) => {
               whileInView={{ opacity: 1, translateY: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0 }}
-              className="font-semibold uppercase text-2xl dark:text-zinc-200 "
+              className="font-semibold uppercase text-2xl dark:text-zinc-300 "
             >
               Links
             </motion.span>
@@ -430,23 +468,23 @@ const DeviceDemo = ({ url, title, cardInfo, pics }: any) => {
               className="flex justify-center items-center gap-10 flex-wrap"
             >
               <Link
-                className="bg-zinc-200 dark:bg-zinc-800 w-[150px] shadow-md shadow-zinc-600 dark:shadow-black rounded-lg p-2 flex justify-center items-center hover:scale-[1.02] transition-all"
+                className="bg-zinc-300 dark:bg-zinc-900 w-[150px] shadow-md shadow-zinc-600 dark:shadow-black rounded-lg p-2 flex justify-center items-center hover:scale-[1.02] transition-all"
                 target="_blank"
                 href={cardInfo.repo}
               >
-                <p className="dark:text-zinc-200 ">Github</p>
+                <p className="dark:text-zinc-300 ">Github</p>
                 <LiaGithub
-                  className={"text-[5rem] dark:text-zinc-200 "}
+                  className={"text-[5rem] dark:text-zinc-300 "}
                 ></LiaGithub>
               </Link>{" "}
               <Link
-                className="bg-zinc-200 w-[150px] dark:bg-zinc-800 shadow-md shadow-zinc-600 dark:shadow-black rounded-lg p-2 flex justify-center items-center hover:scale-[1.02] transition-all"
+                className="bg-zinc-300 w-[150px] dark:bg-zinc-900 shadow-md shadow-zinc-600 dark:shadow-black rounded-lg p-2 flex justify-center items-center hover:scale-[1.02] transition-all"
                 target="_blank"
                 href={url}
               >
-                <p className="dark:text-zinc-200">Demo</p>
+                <p className="dark:text-zinc-300">Demo</p>
                 <MdOutlineVideogameAsset
-                  className={"text-[5rem] pl-2 dark:text-zinc-200 "}
+                  className={"text-[5rem] pl-2 dark:text-zinc-300 "}
                 ></MdOutlineVideogameAsset>
               </Link>
             </motion.div>
