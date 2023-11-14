@@ -39,7 +39,7 @@ const BigPic = ({ pics, id, triggerPic, previous, next }: any) => {
                     <button onClick={() => next(id)} className="hover:scale-[1.2] hidden lg:flex  w-[8%] max-w-[90px] transition-all pointer-events-auto z-[99999999999] dark:invert">
                         <Image className="rounded-xl pointer-events-none" src={"https://portfolio-bucket-thalescardoso.s3.amazonaws.com/arrow-right.svg"} width={1500} height={1500} alt="Mockup of the project"></Image>
                     </button>  
-                    <div className="border-2 border-black rounded-md h-[104%]  w-[103%] absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] opacity-25 dark:border-gray-50"></div>
+                    <div className="border-2 border-zinc-300 rounded-md h-[104%] z-[99999999] w-[103%] absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] opacity-50 dark:border-gray-50"></div>
 
                 </div>
             </motion.div>
