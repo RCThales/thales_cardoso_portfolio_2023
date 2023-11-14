@@ -116,11 +116,11 @@ const DeviceDemo = ({ url, title, cardInfo, pics }: any) => {
       whileInView={{ opacity: 1,  translateY: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: 0 }}
-      className="flex w-fit flex-col justify-center items-center max-w-[90vw] gap-4 bg-zinc-300 dark:bg-zinc-900 p-20 rounded-tl-3xl shadow-zinc-500 dark:shadow-black shadow-md rounded-br-3xl">
-       <h3 className="text-2xl bg-red-600 rounded-xl p-4 max-w-[85vw] text-zinc-50">PS: You can only test the PURCHASE feature on the actual website, not on the demo below!</h3>
+      className="flex w-fit flex-col justify-center items-center max-w-[90vw] gap-4 bg-zinc-300 dark:bg-zinc-900 p-5 rounded-tl-3xl shadow-zinc-500 dark:shadow-black shadow-md rounded-br-3xl">
+       <h3 className="text-xl bg-red-600 rounded-xl p-4 max-w-[95vw] text-zinc-50">PS: You can only test the PURCHASE feature on the actual website, not on the demo below!</h3>
        <p className="text-xl max-w-[85vw] text-zinc-950 dark:text-zinc-50">🤑To test it for free use this DEMO CREDIT CARD (click on the numbers to copy)</p>
-       <div className="w-[400px] flex justify-center flex-col items-center shadow-gray-900 shadow-md bg-gradient-to-r from-orange-300  via-orange-500 to-orange-600 rounded-md aspect-video">     
-          <h3 onClick={() => copyText("4242424242424242")} className="m-auto font-bold text-2xl cursor-pointer hover:scale-[1.05] text-zinc-950  transition-all">4242 4242 4242 4242</h3>
+       <div className="w-[300px] max-w-[90vw] flex justify-center flex-col items-center shadow-gray-900 shadow-md bg-gradient-to-r from-orange-300  via-orange-500 to-orange-600 rounded-md aspect-video">     
+          <h3 onClick={() => copyText("4242424242424242")} className="m-auto font-bold text-xl cursor-pointer hover:scale-[1.05] text-zinc-950  transition-all">4242 4242 4242 4242</h3>
           <div className="flex justify-evenly w-full">
             <p onClick={() => copyText("10/50")} className="cursor-pointer hover:scale-[1.05] font-semibold text-zinc-950  transition-all">10/50</p>
             <p onClick={() => copyText("999")} className="cursor-pointer hover:scale-[1.05] font-semibold text-zinc-950 transition-all">999</p>
