@@ -185,3 +185,6 @@ body {
   background-image: url("https://static.vecteezy.com/system/resources/thumbnails/006/692/205/small/loading-icon-template-black-color-editable-loading-icon-symbol-flat-illustration-for-graphic-and-web-design-free-vector.jpg");
 }
 
+.Toastify__toast-container--top-right {
+  z-index: 99999999 !important;
+}

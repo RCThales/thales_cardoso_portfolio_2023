@@ -93,7 +93,7 @@ const Navbar = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.2, delay: 0 }}
         ref={navbarWrapper}
-        className="fixed top-0 w-full z-[99999999] hero_fixed"
+        className="fixed top-0 w-full z-[999999] hero_fixed"
       >
         <div className="max-w-screen-xl flex flex-wrap h-full items-center justify-between mx-auto p-4 ">
           <a href="/" className="flex items-center">

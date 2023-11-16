@@ -110,6 +110,7 @@ const DeviceDemo = ({ url, title, cardInfo, pics }: any) => {
       
       {bicBigPictureOpen && <BigPic pics={pics} id={pictureId} triggerPic={triggerBigPicture} next={nextPicture} previous={previousPicture}></BigPic>}
 
+      {/* batour card */}
       {title === "Batour" &&     
       <motion.div         
       initial={{ opacity: 0,  translateY: -30 }}
@@ -131,9 +132,9 @@ const DeviceDemo = ({ url, title, cardInfo, pics }: any) => {
       }
 
       {/* INTERACTIVE DEMOS */}
-      <div className="flex flex-col items-center justify-center w-screen  pb-20 py-10 lg:pb-10 relative">
+      <div className="flex flex-col items-center justify-center w-screen  pb-20 pb-10 lg:pb-10 relative">
         
-        <h2 className="responsive_title_normal py-10">INTERACTIVE DEMOS</h2>
+        <h2 className="responsive_title_normal pb-10">INTERACTIVE DEMOS</h2>
         <p className="max-w-[70vw] text-center text-xl font-nromal">
             PS: This device ACTUALLY works and was made by me with TAILWIND! <br /><br />  You can also go to the actual webiste clicking the button below =)
         </p>
