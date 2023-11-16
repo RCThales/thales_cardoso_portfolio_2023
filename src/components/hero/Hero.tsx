@@ -70,13 +70,25 @@ const Hero = () => {
             initial={{ opacity: 0, translateY: -30 }}
             whileInView={{ opacity: 1, translateY: 0 }}
             transition={{ duration: 0.5, delay: 0 }}
-            className="max-w-[70vw] text-[1.2rem] lg:text-[1.8rem] mt-10 text-center cursor-pointer bg-gradient-to-r
+            className="max-w-[70vw] w-[260px] flex justify-center items-center text-[1.2rem] lg:text-[1.8rem] mt-10 text-center cursor-pointer bg-gradient-to-r
            from-orange-500 to-orange-600 hover:shadow-lg drop-shadow-lg hover:scale-105 active:scale-95
             active:shadow-inner transition-all px-6 py-2 rounded-tl-2xl rounded-br-2xl rounded-tr-lg rounded-bl-lg
              text-gray-100 dark:text-zync-950 whitespace-nowrap"
             href="#projects"
           >
             SEE MY WORK
+          </motion.a>
+          <motion.a
+            initial={{ opacity: 0, translateY: -30 }}
+            whileInView={{ opacity: 1, translateY: 0 }}
+            transition={{ duration: 0.5, delay: 0 }}
+            className="max-w-[70vw] w-[260px] flex justify-center items-center text-[1.2rem] lg:text-[1.8rem] mt-10 text-center cursor-pointer bg-gradient-to-r
+           from-orange-500 to-orange-600 hover:shadow-lg drop-shadow-lg hover:scale-105 active:scale-95
+            active:shadow-inner transition-all px-6 py-2 rounded-tl-2xl rounded-br-2xl rounded-tr-lg rounded-bl-lg
+             text-gray-100 dark:text-zync-950 whitespace-nowrap"
+            href="#resume"
+          >
+            GET MY RESUMÉ
           </motion.a>
         </div>
 
