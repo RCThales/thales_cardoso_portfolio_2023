@@ -117,7 +117,7 @@ const DeviceDemo = ({ url, title, cardInfo, pics }: any) => {
       whileInView={{ opacity: 1,  translateY: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: 0 }}
-      className="flex w-fit flex-col justify-center items-center max-w-[90vw] gap-4 bg-zinc-300 dark:bg-zinc-900 p-5 rounded-tl-3xl shadow-zinc-500 dark:shadow-black shadow-md rounded-br-3xl">
+      className="flex w-fit flex-col justify-center items-center max-w-[90vw] mb-20 gap-4 bg-red-600 p-5 shadow-zinc-500 dark:shadow-black shadow-md rounded-3xl">
        <h3 className="text-xl bg-red-600 rounded-xl p-4 max-w-[95vw] text-zinc-50">PS: You can only test the PURCHASE feature on the actual website, not on the demo below!</h3>
        <p className="text-xl max-w-[85vw] text-zinc-950 dark:text-zinc-50">🤑To test it for free use this DEMO CREDIT CARD (click on the numbers to copy)</p>
        <div className="w-[300px] max-w-[90vw] flex justify-center flex-col items-center shadow-gray-900 shadow-md bg-gradient-to-r from-orange-300  via-orange-500 to-orange-600 rounded-md aspect-video">     
@@ -132,7 +132,7 @@ const DeviceDemo = ({ url, title, cardInfo, pics }: any) => {
       }
 
       {/* INTERACTIVE DEMOS */}
-      <div className="flex flex-col items-center justify-center w-screen  pb-20 pb-10 lg:pb-10 relative">
+      <div className="flex flex-col items-center justify-center w-screen  pb-10 lg:pb-10 relative">
         
         <h2 className="responsive_title_normal pb-10">INTERACTIVE DEMOS</h2>
         <p className="max-w-[70vw] text-center text-xl font-nromal">
