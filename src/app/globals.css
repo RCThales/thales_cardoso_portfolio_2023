@@ -167,7 +167,7 @@ body {
 
 .hero_bg::after {
   content: "";
-  background-image: url("https://storage.googleapis.com/artology/image-to-image/6551104130a2f6c688e47e0a?w=1080&q=75&auto=format");
+  background-image: url("https://portfolio-bucket-thalescardoso.s3.amazonaws.com/tech_bg.jpg");
   position: fixed;
   top: 0;
   right: 0;
