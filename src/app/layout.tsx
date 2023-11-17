@@ -22,12 +22,12 @@ export const metadata: Metadata = {
     siteName: "Thales Cardoso Portfolio",
     images: [
       {
-        url: "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/thalesbanner.png",
+        url: "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/thalesbanner.jpg",
         width: 800,
         height: 600,
       },
       {
-        url: "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/thalesbanner.png",
+        url: "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/thalesbanner.jpg",
         width: 1800,
         height: 1600,
         alt: "Thales Cardoso banner.",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     title: "Software developer in Canada",
     description:
       "Software developer in Canada specialized in react web applications.",
-    images: ["https://portfolio-bucket-thalescardoso.s3.amazonaws.com/thalesbanner.png"],
+    images: ["https://portfolio-bucket-thalescardoso.s3.amazonaws.com/thalesbanner.jpg"],
   },
   verification: {
     google: "google",
@@ -69,9 +69,9 @@ export const metadata: Metadata = {
     title: "Thales' Apple Web App",
     statusBarStyle: "black-translucent",
     startupImage: [
-      "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/thalesbanner.png",
+      "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/thalesbanner.jpg",
       {
-        url: "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/thalesbanner.png",
+        url: "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/thalesbanner.jpg",
         media: "(device-width: 768px) and (device-height: 1024px)",
       },
     ],
