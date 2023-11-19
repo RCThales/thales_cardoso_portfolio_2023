@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Thales Cardoso",
     description:
-      "Software developer in Canada specialized in react web applications.",
+      "Front-end developer in Canada specialized in react web applications.",
     url: "https://thalescardoso.dev",
     siteName: "Thales Cardoso Portfolio",
     images: [
@@ -33,7 +33,6 @@ export const metadata: Metadata = {
         alt: "Thales Cardoso banner.",
       },
     ],
-
     locale: "en_CA",
     type: "website",
   },
@@ -52,9 +51,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Software developer in Canada",
+    title: "Front-end developer in Canada",
     description:
-      "Software developer in Canada specialized in react web applications.",
+      "Front-end developer in Canada specialized in react web applications.",
     images: ["https://portfolio-bucket-thalescardoso.s3.amazonaws.com/thalesbanner.jpg"],
   },
   verification: {
