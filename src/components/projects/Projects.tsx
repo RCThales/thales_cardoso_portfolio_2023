@@ -6,7 +6,7 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="h-auto relative w-full mt-[100vh] bg-zinc-200 dark:bg-zinc-900 z-40"
+      className="h-auto relative w-full mt-[100vh] bg-zinc-200 dark:bg-zinc-900 z-40 pb-20"
     >
       <div className="absolute top-[-38px] left-0 w-full overflow-hidden leading-0 transform rotate-180">
         <svg

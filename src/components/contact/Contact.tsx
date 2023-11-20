@@ -10,8 +10,23 @@ const Contact = () => {
   return (
     <div
       id={"contact"}
-      className="flex justify-center py-40 items-center flex-col gap-6 flex-wrap h-full w-screen z-[99999] bg-zinc-200 dark:bg-zinc-900"
+      className="flex justify-center relative py-40 items-center flex-col gap-6 flex-wrap h-full w-screen z-[99999] bg-zinc-300 dark:bg-zinc-950"
     >
+      <div className="absolute top-0 left-0 w-full overflow-hidden leading-0 transform">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+          className="relative block w-full h-[38px]"
+        >
+          <path
+            d="M1200 0L0 0 892.25 114.72 1200 0z"
+            className="fill-current text-[rgb(228,228,231)] dark:text-zinc-900"
+            xmlns="http://www.w3.org/2000/svg"
+          ></path>
+        </svg>
+      </div>
       <motion.h4
         initial={{ opacity: 0, translateY: -30 }}
         whileInView={{ opacity: 1, translateY: 0 }}

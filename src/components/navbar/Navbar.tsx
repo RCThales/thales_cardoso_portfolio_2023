@@ -143,15 +143,6 @@ const Navbar = () => {
               </li>
               <li>
                 <a
-                  href="#resume"
-                  onClick={toggleNavbar}
-                  className="block py-2 pl-3 pr-4 rounded hover:md:text-orange-500 transition-all text-zync-950 dark:text-gray-100 md:p-0"
-                >
-                  Resume
-                </a>
-              </li>
-              <li>
-                <a
                   href="#contact"
                   onClick={toggleNavbar}
                   className="block py-2 pl-3 pr-4  rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 hover:md:text-orange-500 transition-all text-zync-950 dark:text-gray-100 md:p-0"

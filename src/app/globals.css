@@ -80,15 +80,25 @@ body {
   background-color: transparent;
 }
 
+@media screen and (min-width: 768px) {
+  .show.darkNavBarColor {
+    opacity: 0.95 !important;
+  }
+  
+  .show.navBarColor {
+    opacity: 0.95 !important;
+
+  }
+}
+
 .show.darkNavBarColor {
-  opacity: 0.95 !important;
   background-color: rgb(24 24 27);
 }
 
 .show.navBarColor {
-  opacity: 0.95 !important;
   background-color: rgb(228 228 231);
 }
+
 
 @keyframes navbarColorIn {
   from {
