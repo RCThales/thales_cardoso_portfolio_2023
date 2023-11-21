@@ -27,14 +27,21 @@ const DeviceGrid = () => {
         websitePic="https://portfolio-bucket-thalescardoso.s3.amazonaws.com/mockup+-+BB.jpg"
         delayNum={0.3}
         id="2"
-        techs={["TYPESCRIPT", "REACT", "Next.JS", "S3"]}
+        techs={["TYPESCRIPT", "REACT", "Next.JS", "Tailwind", "S3"]}
       />
       <DemoItems
         title="My Music Portfolio"
         websitePic="https://portfolio-bucket-thalescardoso.s3.amazonaws.com/mockup+-+MUSIC.jpg"
         delayNum={0.4}
         id="3"
-        techs={["TYPESCRIPT", "REACT", "Next.JS", "S3"]}
+        techs={["TYPESCRIPT", "REACT", "Next.JS", "Tailwind", "S3"]}
+      />
+        <DemoItems
+        title="The website you are using now 😊"
+        websitePic="https://portfolio-bucket-thalescardoso.s3.amazonaws.com/portfolio_2.png"
+        delayNum={0.4}
+        id="4"
+        techs={["TYPESCRIPT", "REACT", "Next.JS", "Tailwind", "S3"]}
       />
     </div>
   );

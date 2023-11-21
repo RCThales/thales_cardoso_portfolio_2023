@@ -5,6 +5,7 @@ export default function ItemPage({ params }: any) {
     "1": "Batour",
     "2": "Burger Burger",
     "3": "My Music Portfolio",
+    "4": "Thales Cardoso DEV Portfolio",
   };
 
   const url: any = {
@@ -12,6 +13,7 @@ export default function ItemPage({ params }: any) {
     "1": "https://batour.vercel.app/",
     "2": "https://burgerburger.vercel.app/",
     "3": "https://thalescardris.com/",
+    "4": "https://thalescardoso.dev/",
   };
 
   const pics: any = {
@@ -23,6 +25,8 @@ export default function ItemPage({ params }: any) {
   "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/bb_sc_3.png", "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/bb_sc_4.png"],
     "3": ["https://portfolio-bucket-thalescardoso.s3.amazonaws.com/cardris_sc_1.png", "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/cardris_sc_2.png",
   "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/cardris_sc_3.png", "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/cardris_sc_4.png"],
+    "4": ["https://portfolio-bucket-thalescardoso.s3.amazonaws.com/portfolio_1.png", "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/portfolio_2.png",
+  "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/portfolio_3.png", "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/portfolio_4.png"],
   };
 
   const cardInfo: any = {
@@ -74,6 +78,16 @@ export default function ItemPage({ params }: any) {
       goals:
         "ThalesCardris features a sleek sidebar design that enhances both functionality and aesthetics. Carefully curated for quick navigation, it seamlessly integrates with the overall modern and polished look of the site. The sidebar is not just a navigation tool; it's a deliberate design choice that reflects my attention to detail and commitment to a seamless user experience.",
       repo: "https://github.com/RCThales/cardrisportfolio",
+    },
+    "4": {
+      overview:
+        "This is the website you are in now! It was coded entirely by me and it is solely focused on projects presentation, ease of use, responsiveness and UX!",
+      tech: ["Javascript | Typescript", "REACT", "Next.JS", "Tailwind", "S3"],
+      roles: ["Development", "Design"],
+    
+      goals:
+        "Showcase my work to employers and hiring managers effectively.",
+      repo: "https://github.com/RCThales/thales_cardoso_portfolio_2023",
     },
   };
 
