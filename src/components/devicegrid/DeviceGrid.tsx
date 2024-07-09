@@ -3,9 +3,7 @@
 import React from "react";
 import DemoItems from "../demoitems/DemoItems";
 
-
 const DeviceGrid = () => {
-
   return (
     <div className="flex flex-wrap flex-col lg:flex-row justify-center items-center w-screen mt-0 gap-10">
       <DemoItems
@@ -34,13 +32,6 @@ const DeviceGrid = () => {
         websitePic="https://portfolio-bucket-thalescardoso.s3.amazonaws.com/mockup+-+MUSIC.jpg"
         delayNum={0.4}
         id="3"
-        techs={["TYPESCRIPT", "REACT", "Next.JS", "Tailwind", "S3"]}
-      />
-        <DemoItems
-        title="The website you are using now 😊"
-        websitePic="https://portfolio-bucket-thalescardoso.s3.amazonaws.com/portfolio_2.png"
-        delayNum={0.4}
-        id="4"
         techs={["TYPESCRIPT", "REACT", "Next.JS", "Tailwind", "S3"]}
       />
     </div>
