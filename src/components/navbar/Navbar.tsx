@@ -57,7 +57,7 @@ const Navbar = () => {
     const changeNavbar = () => {
       const navbarClasses = navbarWrapper?.current?.classList;
 
-      if (window?.scrollY >= window?.innerHeight) {
+      if (window?.scrollY >= window?.innerHeight - 350) {
         navbarClasses?.add("show");
       } else {
         navbarClasses?.remove("show");

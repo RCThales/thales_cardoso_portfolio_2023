@@ -5,7 +5,7 @@ export default function ItemPage({ params }: any) {
     "1": "Batour",
     "2": "Burger Burger",
     "3": "Warm Up Guru",
-    "4": "Thales Cardoso DEV Portfolio",
+    "4": "Univartsity",
   };
 
   const url: any = {
@@ -13,6 +13,7 @@ export default function ItemPage({ params }: any) {
     "1": "https://batour.vercel.app/",
     "2": "https://burgerburger.vercel.app/",
     "3": "https://warmupguru.vercel.app/",
+    "4": "https://univartsity.vercel.app/",
   };
 
   const pics: any = {

@@ -154,110 +154,156 @@ const DeviceDemo = ({ url, title, cardInfo, pics }: any) => {
       )}
 
       {/* INTERACTIVE DEMOS */}
-      <div className="flex flex-col items-center justify-center w-screen  pb-10 lg:pb-10 relative">
-        <h2 className="responsive_title_normal pb-10">INTERACTIVE DEMOS</h2>
-        <p className="max-w-[70vw] text-center text-xl font-nromal">
-          PS: This device ACTUALLY works and was made by me with TAILWIND!{" "}
-          <br />
-          <br /> You can also go to the actual webiste clicking the button below
-          =)
-        </p>
-        <div className="flex justify-center flex-wrap items-center gap-6 p-14 pb-20 lg:pb-10">
-          {/* Buttons for device */}
-          <motion.button
-            initial={{ opacity: 0, translateY: -30 }}
-            whileInView={{ opacity: 1, translateY: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0 }}
-            onClick={() => changeDeviceMode()}
-            className="max-w-[70vw] text-[1.3rem] w-[230px] lg:flex justify-center items-center text-center cursor-pointer bg-gradient-to-r
-            from-red-500 to-red-600 drop-shadow-lg hover:scale-105 active:scale-95
-              active:shadow-inner transition-all px-6 py-2 rounded-tl-2xl rounded-br-2xl rounded-tr-lg rounded-bl-lg
-              text-zinc-100 dark:text-zync-950 whitespace-nowrap hidden"
-          >
-            {deviceMode === "desktop"
-              ? "Change to Mobile"
-              : "Change to Desktop"}
-          </motion.button>
-
-          <motion.a
-            initial={{ opacity: 0, translateY: -30 }}
-            whileInView={{ opacity: 1, translateY: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0 }}
-            target="_blank"
-            href={url}
-            className="max-w-[70vw] w-[230px] text-[1.3rem]  flex justify-center items-center text-center cursor-pointer bg-gradient-to-r
-            border-red-500 border-2 drop-shadow-lg hover:scale-105 active:scale-95
-              active:shadow-inner transition-all px-6 py-2 rounded-tl-2xl rounded-br-2xl rounded-tr-lg rounded-bl-lg
-              text-zinc-800 dark:text-zync-950 whitespace-nowrap dark:text-gray-200 hover:bg-red-500 hover:dark:text-black"
-          >
-            Go To Website
-          </motion.a>
-        </div>
-
-        {/* DEVICE DEMOS */}
-        <motion.div
-          initial={{ opacity: 0, translateY: -30 }}
-          whileInView={{ opacity: 1, translateY: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0 }}
-          className="demo_wrapper pb-10 flex justify-center items-center relative"
-        >
-          <p className="text-3xl absolute top-[-40px] z-50 lg:top-10 font-semibold">
-            TRY ME ↓
+      {title !== "ThalesBoy Color" ? (
+        <div className="flex flex-col items-center justify-center w-screen  pb-10 lg:pb-10 relative">
+          <h2 className="responsive_title_normal pb-10">INTERACTIVE DEMOS</h2>
+          <p className="max-w-[70vw] text-center text-xl font-nromal">
+            PS: This device ACTUALLY works and was made by me with TAILWIND!{" "}
+            <br />
+            <br /> You can also go to the actual webiste clicking the button
+            below =)
           </p>
-          {/* PHONE */}
-          {deviceMode === "mobile" && (
-            <motion.div
+          <div className="flex justify-center flex-wrap items-center gap-6 p-14 pb-20 lg:pb-10">
+            {/* Buttons for device */}
+            <motion.button
               initial={{ opacity: 0, translateY: -30 }}
-              animate={{ opacity: 1, translateY: 0 }}
+              whileInView={{ opacity: 1, translateY: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0 }}
-              className="mobile_demo bg-gray-900 relative border-gray-300 border-[8px]  w-[500px] h-[1000px] shadow-lg shadow-gray-800 flex flex-col justify-center items-center lg:translate-y-[0%] text-black p-4 rounded-[70px]"
+              onClick={() => changeDeviceMode()}
+              className="max-w-[70vw] text-[1.3rem] w-[230px] lg:flex justify-center items-center text-center cursor-pointer bg-gradient-to-r
+         from-red-500 to-red-600 drop-shadow-lg hover:scale-105 active:scale-95
+           active:shadow-inner transition-all px-6 py-2 rounded-tl-2xl rounded-br-2xl rounded-tr-lg rounded-bl-lg
+           text-zinc-100 dark:text-zync-950 whitespace-nowrap hidden"
             >
-              <div className="h-[30px] w-[20%] bg-black rounded-full absolute top-[25px]"></div>
-              <span className="absolute top-[25px] left-[20%]">
-                {currentHour}
-              </span>
-              <Image
-                className="absolute top-[25px] right-[30%]"
-                src={
-                  "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/phone+signal.png"
-                }
-                alt="Phone signal icon"
-                width={20}
-                height={20}
-              ></Image>
-              <Image
-                className="absolute top-[25px] right-[22%]"
-                src={
-                  "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/wifi.png"
-                }
-                alt="Phone wifi icon"
-                width={20}
-                height={20}
-              ></Image>
-              <Image
-                className="absolute top-[25px] right-[15%]"
-                src={
-                  "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/batery.png"
-                }
-                alt="Phone battery icon"
-                width={20}
-                height={20}
-              ></Image>
-              <div className="h-[120px] w-[100%] bg-white rounded-t-[70px]">
-                <div className="h-[35px] w-[80%] bg-gray-200 rounded-full absolute top-[65px] right-[50%] translate-x-[50%] flex justify-center">
-                  <span className="flex justify-center items-center">
-                    {url}
-                  </span>
-                </div>
-              </div>
-              <iframe src={url} className="w-[100%] h-[100%]"></iframe>
-              <div className="h-[70px] w-[100%] bg-gray-100 rounded-b-[70px] relative">
+              {deviceMode === "desktop"
+                ? "Change to Mobile"
+                : "Change to Desktop"}
+            </motion.button>
+
+            <motion.a
+              initial={{ opacity: 0, translateY: -30 }}
+              whileInView={{ opacity: 1, translateY: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0 }}
+              target="_blank"
+              href={url}
+              className="max-w-[70vw] w-[230px] text-[1.3rem]  flex justify-center items-center text-center cursor-pointer bg-gradient-to-r
+         border-red-500 border-2 drop-shadow-lg hover:scale-105 active:scale-95
+           active:shadow-inner transition-all px-6 py-2 rounded-tl-2xl rounded-br-2xl rounded-tr-lg rounded-bl-lg
+           text-zinc-800 dark:text-zync-950 whitespace-nowrap dark:text-gray-200 hover:bg-red-500 hover:dark:text-black"
+            >
+              Go To Website
+            </motion.a>
+          </div>
+
+          {/* DEVICE DEMOS */}
+          <motion.div
+            initial={{ opacity: 0, translateY: -30 }}
+            whileInView={{ opacity: 1, translateY: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0 }}
+            className="demo_wrapper pb-10 flex justify-center items-center relative"
+          >
+            <p className="text-3xl absolute top-[-40px] z-50 lg:top-10 font-semibold">
+              TRY ME ↓
+            </p>
+            {/* PHONE */}
+            {deviceMode === "mobile" && (
+              <motion.div
+                initial={{ opacity: 0, translateY: -30 }}
+                animate={{ opacity: 1, translateY: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0 }}
+                className="mobile_demo bg-gray-900 relative border-gray-300 border-[8px]  w-[500px] h-[1000px] shadow-lg shadow-gray-800 flex flex-col justify-center items-center lg:translate-y-[0%] text-black p-4 rounded-[70px]"
+              >
+                <div className="h-[30px] w-[20%] bg-black rounded-full absolute top-[25px]"></div>
+                <span className="absolute top-[25px] left-[20%]">
+                  {currentHour}
+                </span>
                 <Image
-                  className="h-[30px] w-[30px]  absolute left-[10%] top-[10px] opacity-[0.5]"
+                  className="absolute top-[25px] right-[30%]"
+                  src={
+                    "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/phone+signal.png"
+                  }
+                  alt="Phone signal icon"
+                  width={20}
+                  height={20}
+                ></Image>
+                <Image
+                  className="absolute top-[25px] right-[22%]"
+                  src={
+                    "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/wifi.png"
+                  }
+                  alt="Phone wifi icon"
+                  width={20}
+                  height={20}
+                ></Image>
+                <Image
+                  className="absolute top-[25px] right-[15%]"
+                  src={
+                    "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/batery.png"
+                  }
+                  alt="Phone battery icon"
+                  width={20}
+                  height={20}
+                ></Image>
+                <div className="h-[120px] w-[100%] bg-white rounded-t-[70px]">
+                  <div className="h-[35px] w-[80%] bg-gray-200 rounded-full absolute top-[65px] right-[50%] translate-x-[50%] flex justify-center">
+                    <span className="flex justify-center items-center">
+                      {url}
+                    </span>
+                  </div>
+                </div>
+                <iframe src={url} className="w-[100%] h-[100%]"></iframe>
+                <div className="h-[70px] w-[100%] bg-gray-100 rounded-b-[70px] relative">
+                  <Image
+                    className="h-[30px] w-[30px]  absolute left-[10%] top-[10px] opacity-[0.5]"
+                    src={
+                      "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/arrow-left.svg"
+                    }
+                    alt="Phone battery icon"
+                    width={20}
+                    height={20}
+                  ></Image>
+                  <Image
+                    className="h-[30px] w-[30px] absolute left-[28%] top-[10px] opacity-[0.5]"
+                    src={
+                      "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/arrow-right.svg"
+                    }
+                    alt="Phone battery icon"
+                    width={20}
+                    height={20}
+                  ></Image>
+
+                  <div className="h-[30px] w-[30px] bg-gray-300 rounded-full absolute right-[50%] translate-x-[50%] top-[10px] text-3xl text-gray-500 flex justify-center items-center">
+                    +
+                  </div>
+
+                  <div className="h-[30px] w-[30px] bg-0 border-[3px] border-gray-500 rounded-xl absolute right-[28%] top-[10px] text-sm text-gray-500 flex justify-center items-center">
+                    2
+                  </div>
+                  <div className=" absolute right-[12%] top-[0px] text-3xl text-gray-500 flex justify-center items-center">
+                    ...
+                  </div>
+                </div>
+              </motion.div>
+            )}
+            {/* DESKTOP */}
+            {deviceMode === "desktop" && (
+              <motion.div
+                initial={{ opacity: 0, translateY: -30 }}
+                animate={{ opacity: 1, translateY: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0 }}
+                className="desktop_demo bg-gray-900 relative border-gray-300 border-[8px] w-[1400px] h-[1080px] shadow-lg shadow-gray-800 flex flex-col justify-center items-center -translate-x-[0] translate-y-[0%]   lg:translate-y-[0%] text-black p-4 rounded-[30px]"
+              >
+                <div className="h-[30px] w-[20%] bg-gray-900 rounded-full absolute top-[0px]"></div>
+                <span className="absolute top-[40px] left-[3%] rounded-full bg-red-500 h-[20px] w-[20px]"></span>
+                <span className="absolute top-[40px] left-[5%] rounded-full bg-yellow-500 h-[20px] w-[20px]"></span>
+                <span className="absolute top-[40px] left-[7%] rounded-full bg-green-500 h-[20px] w-[20px]"></span>
+                <Image
+                  className="absolute top-[40px] left-[12%] rounded-full h-[20px] w-[20px] opacity-30"
                   src={
                     "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/arrow-left.svg"
                   }
@@ -266,7 +312,7 @@ const DeviceDemo = ({ url, title, cardInfo, pics }: any) => {
                   height={20}
                 ></Image>
                 <Image
-                  className="h-[30px] w-[30px] absolute left-[28%] top-[10px] opacity-[0.5]"
+                  className="absolute top-[40px] left-[15%] rounded-full h-[20px] w-[20px] opacity-30"
                   src={
                     "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/arrow-right.svg"
                   }
@@ -274,99 +320,73 @@ const DeviceDemo = ({ url, title, cardInfo, pics }: any) => {
                   width={20}
                   height={20}
                 ></Image>
-
-                <div className="h-[30px] w-[30px] bg-gray-300 rounded-full absolute right-[50%] translate-x-[50%] top-[10px] text-3xl text-gray-500 flex justify-center items-center">
+                <div className="absolute top-[12px] right-[2%] w-[20px] h-[20px] text-[2rem]">
                   +
                 </div>
+                <Image
+                  className="absolute top-[25px] right-[4%] rotate-90 border-gray-600 rounded-full border-[3px]"
+                  src={
+                    "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/arrow-right.svg"
+                  }
+                  alt="Phone wifi icon"
+                  width={20}
+                  height={20}
+                ></Image>
 
-                <div className="h-[30px] w-[30px] bg-0 border-[3px] border-gray-500 rounded-xl absolute right-[28%] top-[10px] text-sm text-gray-500 flex justify-center items-center">
-                  2
+                {/* TOP OF THE BROWSER */}
+                <div className="h-[100px] w-[100%] bg-gray-300 rounded-t-[20px]">
+                  <div className="h-[35px] w-[60%] bg-gray-200 rounded-xl absolute top-[45px] right-[50%] translate-x-[50%] flex justify-center">
+                    <span className="flex justify-center items-center">
+                      {url}
+                    </span>
+                  </div>
                 </div>
-                <div className=" absolute right-[12%] top-[0px] text-3xl text-gray-500 flex justify-center items-center">
-                  ...
-                </div>
-              </div>
-            </motion.div>
-          )}
-          {/* DESKTOP */}
-          {deviceMode === "desktop" && (
-            <motion.div
-              initial={{ opacity: 0, translateY: -30 }}
-              animate={{ opacity: 1, translateY: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0 }}
-              className="desktop_demo bg-gray-900 relative border-gray-300 border-[8px] w-[1400px] h-[1080px] shadow-lg shadow-gray-800 flex flex-col justify-center items-center -translate-x-[0] translate-y-[0%]   lg:translate-y-[0%] text-black p-4 rounded-[30px]"
-            >
-              <div className="h-[30px] w-[20%] bg-gray-900 rounded-full absolute top-[0px]"></div>
-              <span className="absolute top-[40px] left-[3%] rounded-full bg-red-500 h-[20px] w-[20px]"></span>
-              <span className="absolute top-[40px] left-[5%] rounded-full bg-yellow-500 h-[20px] w-[20px]"></span>
-              <span className="absolute top-[40px] left-[7%] rounded-full bg-green-500 h-[20px] w-[20px]"></span>
-              <Image
-                className="absolute top-[40px] left-[12%] rounded-full h-[20px] w-[20px] opacity-30"
-                src={
-                  "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/arrow-left.svg"
-                }
-                alt="Phone battery icon"
-                width={20}
-                height={20}
-              ></Image>
-              <Image
-                className="absolute top-[40px] left-[15%] rounded-full h-[20px] w-[20px] opacity-30"
-                src={
-                  "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/arrow-right.svg"
-                }
-                alt="Phone battery icon"
-                width={20}
-                height={20}
-              ></Image>
-              <div className="absolute top-[12px] right-[2%] w-[20px] h-[20px] text-[2rem]">
-                +
-              </div>
-              <Image
-                className="absolute top-[25px] right-[4%] rotate-90 border-gray-600 rounded-full border-[3px]"
-                src={
-                  "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/arrow-right.svg"
-                }
-                alt="Phone wifi icon"
-                width={20}
-                height={20}
-              ></Image>
 
-              {/* TOP OF THE BROWSER */}
-              <div className="h-[100px] w-[100%] bg-gray-300 rounded-t-[20px]">
-                <div className="h-[35px] w-[60%] bg-gray-200 rounded-xl absolute top-[45px] right-[50%] translate-x-[50%] flex justify-center">
-                  <span className="flex justify-center items-center">
-                    {url}
-                  </span>
-                </div>
-              </div>
+                <iframe
+                  src={url}
+                  className="w-[100%] h-[100%] rounded-b-[2%] overflow-y-auto loading_bg"
+                ></iframe>
+              </motion.div>
+            )}
+          </motion.div>
 
-              <iframe
-                src={url}
-                className="w-[100%] h-[100%] rounded-b-[2%] overflow-y-auto loading_bg"
-              ></iframe>
-            </motion.div>
-          )}
-        </motion.div>
-
-        <div className="h-[5px] bg-zinc-300 dark:bg-zinc-900  absolute bottom-[-4px] w-screen"></div>
-        <div className="absolute bottom-0 w-screen overflow-hidden leading-0 transform rotate-180 ">
-          <svg
-            data-name="Layer 1"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 1200 120"
-            preserveAspectRatio="none"
-            className="relative block w-full h-[38px]"
-          >
-            <path
-              d="M1200 0L0 0 892.25 114.72 1200 0z"
-              className="fill-current text-zinc-300 dark:text-zinc-900"
+          <div className="h-[5px] bg-zinc-300 dark:bg-zinc-900  absolute bottom-[-4px] w-screen"></div>
+          <div className="absolute bottom-0 w-screen overflow-hidden leading-0 transform rotate-180 ">
+            <svg
+              data-name="Layer 1"
               xmlns="http://www.w3.org/2000/svg"
-            ></path>
-          </svg>
+              viewBox="0 0 1200 120"
+              preserveAspectRatio="none"
+              className="relative block w-full h-[38px]"
+            >
+              <path
+                d="M1200 0L0 0 892.25 114.72 1200 0z"
+                className="fill-current text-zinc-300 dark:text-zinc-900"
+                xmlns="http://www.w3.org/2000/svg"
+              ></path>
+            </svg>
+          </div>
+          <div className="py-20 lg:py-0"></div>
         </div>
-        <div className="py-20 lg:py-0"></div>
-      </div>
+      ) : (
+        <div className="flex justify-center flex-wrap items-center gap-6 p-14 pb-20 lg:pb-10">
+          {/* Buttons for device */}
+          <motion.a
+            initial={{ opacity: 0, translateY: -30 }}
+            whileInView={{ opacity: 1, translateY: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0 }}
+            target="_blank"
+            href={url}
+            className="max-w-[70vw] text-[1.3rem] w-[230px] lg:flex justify-center items-center text-center cursor-pointer bg-gradient-to-r
+     from-red-500 to-red-600 drop-shadow-lg hover:scale-105 active:scale-95
+       active:shadow-inner transition-all px-6 py-2 rounded-tl-2xl rounded-br-2xl rounded-tr-lg rounded-bl-lg
+       text-zinc-100 dark:text-zync-950 whitespace-nowrap hidden mb-14"
+          >
+            Go To Website
+          </motion.a>
+        </div>
+      )}
 
       {/* GALLERY */}
 
