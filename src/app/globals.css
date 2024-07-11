@@ -58,9 +58,8 @@ body {
 
 .responsive_title_normal {
   text-transform: uppercase;
-  font-weight:300;
+  font-weight: 300;
   font-size: clamp(1.5rem, 7vw, 2.8rem);
-
 }
 .hero_h2 {
   font-size: clamp(1.5rem, 3vw, 2rem);
@@ -84,10 +83,9 @@ body {
   .show.darkNavBarColor {
     opacity: 0.95 !important;
   }
-  
+
   .show.navBarColor {
     opacity: 0.95 !important;
-
   }
 }
 
@@ -98,7 +96,6 @@ body {
 .show.navBarColor {
   background-color: rgb(228 228 231);
 }
-
 
 @keyframes navbarColorIn {
   from {
@@ -177,21 +174,21 @@ body {
 
 .hero_bg::after {
   content: "";
-  background-image: url("https://portfolio-bucket-thalescardoso.s3.amazonaws.com/tech_bg.jpg");
+  background-image: url("https://cdn.pixabay.com/photo/2022/02/20/17/30/network-7024980_1280.png");
   position: fixed;
   top: 0;
   right: 0;
   z-index: -1;
   width: 100%;
   height: 100%;
-  opacity: 0.2;
+  opacity: 0.05;
   background-position: center;
   background-size: cover;
 }
 
-.loading_bg{
-    background-position: center;
-      background-size: cover;
+.loading_bg {
+  background-position: center;
+  background-size: cover;
   background-image: url("https://static.vecteezy.com/system/resources/thumbnails/006/692/205/small/loading-icon-template-black-color-editable-loading-icon-symbol-flat-illustration-for-graphic-and-web-design-free-vector.jpg");
 }
 

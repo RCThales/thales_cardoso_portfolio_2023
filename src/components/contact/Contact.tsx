@@ -1,7 +1,7 @@
 "use client";
 
-import React from 'react'
-import {MdOutlineEmail} from "react-icons/md"
+import React from "react";
+import { MdOutlineEmail } from "react-icons/md";
 import { PiLinkedinLogoBold } from "react-icons/pi";
 import { BsGithub } from "react-icons/bs";
 import { motion } from "framer-motion";
@@ -55,31 +55,29 @@ const Contact = () => {
         {" "}
         <a
           href="mailto:canadathales@gmail.com"
-          className="max-w-[70vw] w-auto text-[5rem] mt-10 text-center cursor-pointer bg-gradient-to-r from-orange-500 to-orange-600 hover:shadow-lg drop-shadow-lg hover:scale-105 active:scale-95 active:shadow-inner transition-all px-6 py-2 rounded-tl-2xl rounded-br-2xl rounded-tr-lg rounded-bl-lg text-gray-100 dark:text-zync-950 whitespace-nowrap"
+          className="max-w-[70vw] w-auto text-[5rem] mt-10 text-center cursor-pointer bg-gradient-to-r from-red-500 to-red-600 hover:shadow-lg drop-shadow-lg hover:scale-105 active:scale-95 active:shadow-inner transition-all px-6 py-2 rounded-tl-2xl rounded-br-2xl rounded-tr-lg rounded-bl-lg text-gray-100 dark:text-zync-950 whitespace-nowrap"
         >
           <MdOutlineEmail />
         </a>
         <a
           href="https://www.linkedin.com/in/thalesrodriguescardoso/"
-          target='_blank'
-          className="max-w-[70vw] w-auto text-[5rem] mt-10 text-center cursor-pointer bg-gradient-to-r from-orange-500 to-orange-600 hover:shadow-lg drop-shadow-lg hover:scale-105 active:scale-95 active:shadow-inner transition-all px-6 py-2 rounded-tl-2xl rounded-br-2xl rounded-tr-lg rounded-bl-lg text-gray-100 dark:text-zync-950 whitespace-nowrap"
+          target="_blank"
+          className="max-w-[70vw] w-auto text-[5rem] mt-10 text-center cursor-pointer bg-gradient-to-r from-red-500 to-red-600 hover:shadow-lg drop-shadow-lg hover:scale-105 active:scale-95 active:shadow-inner transition-all px-6 py-2 rounded-tl-2xl rounded-br-2xl rounded-tr-lg rounded-bl-lg text-gray-100 dark:text-zync-950 whitespace-nowrap"
         >
           <PiLinkedinLogoBold />
         </a>
-
         <a
           href="https://github.com/RCThales"
-          target='_blank'
-          className="max-w-[70vw] w-auto text-[5rem] mt-10 text-center cursor-pointer bg-gradient-to-r from-orange-500 to-orange-600 hover:shadow-lg drop-shadow-lg hover:scale-105 active:scale-95 active:shadow-inner transition-all px-6 py-2 rounded-tl-2xl rounded-br-2xl rounded-tr-lg rounded-bl-lg text-gray-100 dark:text-zync-950 whitespace-nowrap"
+          target="_blank"
+          className="max-w-[70vw] w-auto text-[5rem] mt-10 text-center cursor-pointer bg-gradient-to-r from-red-500 to-red-600 hover:shadow-lg drop-shadow-lg hover:scale-105 active:scale-95 active:shadow-inner transition-all px-6 py-2 rounded-tl-2xl rounded-br-2xl rounded-tr-lg rounded-bl-lg text-gray-100 dark:text-zync-950 whitespace-nowrap"
         >
           <BsGithub />
         </a>
-
       </motion.div>
       <br />
       <br />
     </div>
   );
-}
+};
 
-export default Contact
+export default Contact;

@@ -126,7 +126,7 @@ const Navbar = () => {
                 <a
                   href="/"
                   onClick={toggleNavbar}
-                  className="block py-2 pl-3 pr-4 text-zync-950 dark:text-gray-100 dark:text-zync-950  rounded md:bg-transparent hover:md:text-orange-500 transition-all md:p-0 "
+                  className="block py-2 pl-3 pr-4 text-zync-950 dark:text-gray-100 dark:text-zync-950  rounded md:bg-transparent hover:md:text-red-500 transition-all md:p-0 "
                   aria-current="page"
                 >
                   Home
@@ -136,7 +136,7 @@ const Navbar = () => {
                 <a
                   href="#projects"
                   onClick={toggleNavbar}
-                  className="block py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 hover:md:text-orange-500 transition-all text-zync-950 dark:text-gray-100 md:p-0 "
+                  className="block py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 hover:md:text-red-500 transition-all text-zync-950 dark:text-gray-100 md:p-0 "
                 >
                   Projects
                 </a>
@@ -145,7 +145,7 @@ const Navbar = () => {
                 <a
                   href="#contact"
                   onClick={toggleNavbar}
-                  className="block py-2 pl-3 pr-4  rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 hover:md:text-orange-500 transition-all text-zync-950 dark:text-gray-100 md:p-0"
+                  className="block py-2 pl-3 pr-4  rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 hover:md:text-red-500 transition-all text-zync-950 dark:text-gray-100 md:p-0"
                 >
                   Contact
                 </a>
