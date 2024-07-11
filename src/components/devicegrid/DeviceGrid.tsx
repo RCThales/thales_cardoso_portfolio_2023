@@ -28,8 +28,8 @@ const DeviceGrid = () => {
         techs={["TYPESCRIPT", "REACT", "Next.JS", "Tailwind", "S3"]}
       />
       <DemoItems
-        title="My Music Portfolio"
-        websitePic="https://portfolio-bucket-thalescardoso.s3.amazonaws.com/mockup+-+MUSIC.jpg"
+        title="WarmUp Guru"
+        websitePic="https://portfolio-bucket-thalescardoso.s3.amazonaws.com/warmupguru_main.png"
         delayNum={0.4}
         id="3"
         techs={["TYPESCRIPT", "REACT", "Next.JS", "Tailwind", "S3"]}

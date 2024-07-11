@@ -4,7 +4,7 @@ export default function ItemPage({ params }: any) {
     "0": "ThalesBoy Color",
     "1": "Batour",
     "2": "Burger Burger",
-    "3": "My Music Portfolio",
+    "3": "Warm Up Guru",
     "4": "Thales Cardoso DEV Portfolio",
   };
 
@@ -12,21 +12,35 @@ export default function ItemPage({ params }: any) {
     "0": "https://thalesboycolor.netlify.app/",
     "1": "https://batour.vercel.app/",
     "2": "https://burgerburger.vercel.app/",
-    "3": "https://thalescardris.com/",
-    "4": "https://thalescardoso.dev/",
+    "3": "https://warmupguru.vercel.app/",
   };
 
   const pics: any = {
-    "0": ["https://portfolio-bucket-thalescardoso.s3.amazonaws.com/thalesboy_sc_1.png", "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/thalesboy_sc_2.png",
-  "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/thalesboy_sc_3.png", "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/thalesboy_sc_4.png"],
-    "1": ["https://portfolio-bucket-thalescardoso.s3.amazonaws.com/Projects/batour1.jpg", "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/batour_sc_3.png" , 
-  "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/batour_ps_2.png", "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/batour_sc_4.png" ],
-    "2": ["https://portfolio-bucket-thalescardoso.s3.amazonaws.com/bb_sc_1.png", "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/bb_sc_2.png", 
-  "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/bb_sc_3.png", "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/bb_sc_4.png"],
-    "3": ["https://portfolio-bucket-thalescardoso.s3.amazonaws.com/cardris_sc_1.png", "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/cardris_sc_2.png",
-  "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/cardris_sc_3.png", "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/cardris_sc_4.png"],
-    "4": ["https://portfolio-bucket-thalescardoso.s3.amazonaws.com/portfolio_1.png", "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/portfolio_2.png",
-  "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/portfolio_3.png", "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/portfolio_4.png"],
+    "0": [
+      "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/thalesboy_sc_1.png",
+      "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/thalesboy_sc_2.png",
+      "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/thalesboy_sc_3.png",
+      "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/thalesboy_sc_4.png",
+    ],
+    "1": [
+      "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/Projects/batour1.jpg",
+      "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/batour_sc_3.png",
+      "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/batour_ps_2.png",
+      "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/batour_sc_4.png",
+    ],
+    "2": [
+      "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/bb_sc_1.png",
+      "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/bb_sc_2.png",
+      "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/bb_sc_3.png",
+      "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/bb_sc_4.png",
+    ],
+
+    "3": [
+      "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/warmupguru_working.png",
+      "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/warmupguru_menu1.png",
+      "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/warmupguru_menu2.png",
+      "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/warmupguru_main.png",
+    ],
   };
 
   const cardInfo: any = {
@@ -38,7 +52,6 @@ export default function ItemPage({ params }: any) {
         "Make it available for people to create their own games and push to the project's GITHUB repository.",
       repo: "https://github.com/RCThales/ThalesBoy",
       roles: ["Development", "Design"],
-
     },
 
     "1": {
@@ -64,36 +77,25 @@ export default function ItemPage({ params }: any) {
         "BurgerBurger, is my showcase of sleek web development (It serves as the official website for BURGER BURGER, a company located in London, Ontario). With an intuitive UI and responsive design (created by the designer Ray Ruas), it's more than a menu—it's a snapshot of my frontend proficiency. Efficient backend? Check. Smooth transactions? Absolutely. BurgerBurger demonstrates my commitment to top-notch user experiences and cutting-edge tech.",
       tech: ["Javascript | Typescript", "REACT", "Next.JS", "Tailwind", "S3"],
       roles: ["Development"],
-    
+
       goals:
         "With BurgerBurger, I achieved the creation of a seamless web application hosted on Vercel. This project showcases my technical prowess in frontend development, highlighting an intuitive UI and responsive design. Under the hood, the backend efficiently manages orders and transactions. BurgerBurger is a concise representation of my ability to deliver high-quality user experiences while leveraging the latest technologies for optimal performance.",
       repo: "https://github.com/RCThales/burgerburger_website",
     },
     "3": {
       overview:
-        "ThalesCardris is my musical side hustle portfolio—an online testament to my skills in web design and development. With a sleek layout and seamless user experience, it showcases my commitment to excellence in both music and digital craftsmanship. Check it out for a blend of creativity and technical precision.",
+        "WarmUpGuru is a helper for singers with flexible and customizable features for warming up their vocals.",
       tech: ["Javascript | Typescript", "REACT", "Next.JS", "Tailwind", "S3"],
       roles: ["Development", "Design"],
-    
+
       goals:
-        "ThalesCardris features a sleek sidebar design that enhances both functionality and aesthetics. Carefully curated for quick navigation, it seamlessly integrates with the overall modern and polished look of the site. The sidebar is not just a navigation tool; it's a deliberate design choice that reflects my attention to detail and commitment to a seamless user experience.",
-      repo: "https://github.com/RCThales/cardrisportfolio",
-    },
-    "4": {
-      overview:
-        "This is the website you are in now! It was coded entirely by me and it is solely focused on projects presentation, ease of use, responsiveness and UX!",
-      tech: ["Javascript | Typescript", "REACT", "Next.JS", "Tailwind", "S3"],
-      roles: ["Development", "Design"],
-    
-      goals:
-        "Showcase my work to employers and hiring managers effectively.",
-      repo: "https://github.com/RCThales/thales_cardoso_portfolio_2023",
+        "A system that works flawlesly with precise BPM's in order to provide an amazing experience for the user and also many customizable scales and pitches.",
+      repo: "https://github.com/RCThales/WarmUp-Guru",
     },
   };
 
   return (
     <main className="flex min-h-screen  flex-col items-center justify-between overflow-hidden">
-
       <section
         id="home"
         className="h-auto flex-col pt-10 w-screen flex relative min-h-screen hero_bg items-center justify-start"
