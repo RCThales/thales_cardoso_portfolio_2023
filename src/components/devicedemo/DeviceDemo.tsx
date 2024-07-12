@@ -154,14 +154,19 @@ const DeviceDemo = ({ url, title, cardInfo, pics }: any) => {
       )}
 
       {/* INTERACTIVE DEMOS */}
+
       <div className="flex flex-col items-center justify-center w-screen  pb-10 lg:pb-10 relative">
-        <h2 className="responsive_title_normal pb-10">INTERACTIVE DEMOS</h2>
-        <p className="max-w-[70vw] text-center text-xl font-nromal">
-          PS: This device ACTUALLY works and was made by me with TAILWIND!{" "}
-          <br />
-          <br /> You can also go to the actual webiste clicking the button below
-          =)
-        </p>
+        {title !== "ThalesBoy Color" && (
+          <>
+            <h2 className="responsive_title_normal pb-10">INTERACTIVE DEMOS</h2>
+            <p className="max-w-[70vw] text-center text-xl font-nromal">
+              PS: This device ACTUALLY works and was made by me with TAILWIND!{" "}
+              <br />
+              <br /> You can also go to the actual webiste clicking the button
+              below =)
+            </p>
+          </>
+        )}
         <div className="flex justify-center flex-wrap items-center gap-6 p-14 pb-20 lg:pb-10">
           {/* Buttons for device */}
           {title !== "ThalesBoy Color" && (
