@@ -154,17 +154,17 @@ const DeviceDemo = ({ url, title, cardInfo, pics }: any) => {
       )}
 
       {/* INTERACTIVE DEMOS */}
-      {title !== "ThalesBoy Color" ? (
-        <div className="flex flex-col items-center justify-center w-screen  pb-10 lg:pb-10 relative">
-          <h2 className="responsive_title_normal pb-10">INTERACTIVE DEMOS</h2>
-          <p className="max-w-[70vw] text-center text-xl font-nromal">
-            PS: This device ACTUALLY works and was made by me with TAILWIND!{" "}
-            <br />
-            <br /> You can also go to the actual webiste clicking the button
-            below =)
-          </p>
-          <div className="flex justify-center flex-wrap items-center gap-6 p-14 pb-20 lg:pb-10">
-            {/* Buttons for device */}
+      <div className="flex flex-col items-center justify-center w-screen  pb-10 lg:pb-10 relative">
+        <h2 className="responsive_title_normal pb-10">INTERACTIVE DEMOS</h2>
+        <p className="max-w-[70vw] text-center text-xl font-nromal">
+          PS: This device ACTUALLY works and was made by me with TAILWIND!{" "}
+          <br />
+          <br /> You can also go to the actual webiste clicking the button below
+          =)
+        </p>
+        <div className="flex justify-center flex-wrap items-center gap-6 p-14 pb-20 lg:pb-10">
+          {/* Buttons for device */}
+          {title !== "ThalesBoy Color" && (
             <motion.button
               initial={{ opacity: 0, translateY: -30 }}
               whileInView={{ opacity: 1, translateY: 0 }}
@@ -180,24 +180,26 @@ const DeviceDemo = ({ url, title, cardInfo, pics }: any) => {
                 ? "Change to Mobile"
                 : "Change to Desktop"}
             </motion.button>
+          )}
 
-            <motion.a
-              initial={{ opacity: 0, translateY: -30 }}
-              whileInView={{ opacity: 1, translateY: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0 }}
-              target="_blank"
-              href={url}
-              className="max-w-[70vw] w-[230px] text-[1.3rem]  flex justify-center items-center text-center cursor-pointer bg-gradient-to-r
+          <motion.a
+            initial={{ opacity: 0, translateY: -30 }}
+            whileInView={{ opacity: 1, translateY: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0 }}
+            target="_blank"
+            href={url}
+            className="max-w-[70vw] w-[230px] text-[1.3rem]  flex justify-center items-center text-center cursor-pointer bg-gradient-to-r
          border-red-500 border-2 drop-shadow-lg hover:scale-105 active:scale-95
            active:shadow-inner transition-all px-6 py-2 rounded-tl-2xl rounded-br-2xl rounded-tr-lg rounded-bl-lg
-           text-zinc-800 dark:text-zync-950 whitespace-nowrap dark:text-gray-200 hover:bg-red-500 hover:dark:text-black"
-            >
-              Go To Website
-            </motion.a>
-          </div>
+           text-zinc-800 dark:text-zync-950 whitespace-nowrap dark:text-gray-200 hover:bg-red-500 hover:text-white"
+          >
+            Go To Website
+          </motion.a>
+        </div>
 
-          {/* DEVICE DEMOS */}
+        {/* DEVICE DEMOS */}
+        {title !== "ThalesBoy Color" && (
           <motion.div
             initial={{ opacity: 0, translateY: -30 }}
             whileInView={{ opacity: 1, translateY: 0 }}
@@ -349,44 +351,29 @@ const DeviceDemo = ({ url, title, cardInfo, pics }: any) => {
               </motion.div>
             )}
           </motion.div>
-
-          <div className="h-[5px] bg-zinc-300 dark:bg-zinc-900  absolute bottom-[-4px] w-screen"></div>
-          <div className="absolute bottom-0 w-screen overflow-hidden leading-0 transform rotate-180 ">
-            <svg
-              data-name="Layer 1"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 1200 120"
-              preserveAspectRatio="none"
-              className="relative block w-full h-[38px]"
-            >
-              <path
-                d="M1200 0L0 0 892.25 114.72 1200 0z"
-                className="fill-current text-zinc-300 dark:text-zinc-900"
-                xmlns="http://www.w3.org/2000/svg"
-              ></path>
-            </svg>
-          </div>
-          <div className="py-20 lg:py-0"></div>
-        </div>
-      ) : (
-        <div className="flex justify-center flex-wrap items-center gap-6 p-14 pb-20 lg:pb-10">
-          {/* Buttons for device */}
-          <motion.a
-            initial={{ opacity: 0, translateY: -30 }}
-            whileInView={{ opacity: 1, translateY: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0 }}
-            target="_blank"
-            href={url}
-            className="max-w-[70vw] text-[1.3rem] w-[230px] lg:flex justify-center items-center text-center cursor-pointer bg-gradient-to-r
-     from-red-500 to-red-600 drop-shadow-lg hover:scale-105 active:scale-95
-       active:shadow-inner transition-all px-6 py-2 rounded-tl-2xl rounded-br-2xl rounded-tr-lg rounded-bl-lg
-       text-zinc-100 dark:text-zync-950 whitespace-nowrap hidden mb-14"
+        )}
+        <div className="h-[5px] bg-zinc-300 dark:bg-zinc-900  absolute bottom-[-4px] w-screen"></div>
+        <div className="absolute bottom-0 w-screen overflow-hidden leading-0 transform rotate-180 ">
+          <svg
+            data-name="Layer 1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1200 120"
+            preserveAspectRatio="none"
+            className="relative block w-full h-[38px]"
           >
-            Go To Website
-          </motion.a>
+            <path
+              d="M1200 0L0 0 892.25 114.72 1200 0z"
+              className="fill-current text-zinc-300 dark:text-zinc-900"
+              xmlns="http://www.w3.org/2000/svg"
+            ></path>
+          </svg>
         </div>
-      )}
+        <div
+          className={`${
+            title === "ThalesBoy Color" ? "py-0 lg:py-10" : "py-28 lg:py-0"
+          } `}
+        ></div>
+      </div>
 
       {/* GALLERY */}
 
