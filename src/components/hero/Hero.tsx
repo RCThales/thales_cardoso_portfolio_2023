@@ -54,10 +54,10 @@ const Hero = () => {
             className="z-[1] w-[250px] flex justify-center items-center lg:w-[300px] pointer-events-none"
           >
             <Image
-              className="w-[90vw] lg:w-[900px] max-w-[100%] z[999999] rounded-full "
+              className="w-[90vw] lg:w-[900px] max-w-[100%] z[999999] rounded-full mb-10"
               width={1000}
               height={1000}
-              alt="Thales' picture with artistic effects."
+              alt="Thales' picture."
               src={
                 "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/1707537774051.jpeg"
               }
@@ -70,7 +70,7 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="dark:text-gray-100 text-zync-950  text-center text-xl min-w-[280px] lg:text-3xl w-[100%] lg:w-[80%] pointer-events-none z[999]"
           >
-            <span className="font-semibold">Front-End Developer</span> crafting{" "}
+            <span className="font-semibold">Developer</span> crafting{" "}
             <span className="italic">sleek</span>,
             <span className="italic"> user-friendly</span>, and{" "}
             <span className="italic">performant</span> web experiences.
