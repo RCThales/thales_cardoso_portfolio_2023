@@ -54,7 +54,7 @@ const Contact = () => {
       >
         {" "}
         <a
-          href="mailto:canadathales@gmail.com"
+          href="mailto:thalescardris@gmail.com"
           className="max-w-[70vw] w-auto text-[5rem] mt-10 text-center cursor-pointer bg-gradient-to-r from-red-500 to-red-600 hover:shadow-lg drop-shadow-lg hover:scale-105 active:scale-95 active:shadow-inner transition-all px-6 py-2 rounded-tl-2xl rounded-br-2xl rounded-tr-lg rounded-bl-lg text-gray-100 dark:text-zync-950 whitespace-nowrap"
         >
           <MdOutlineEmail />
