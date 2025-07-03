@@ -382,34 +382,40 @@ const DeviceDemo = ({ url, title, cardInfo, pics }: any) => {
 
       {/* GALLERY */}
 
-      <div className="flex flex-col justify-center items-center w-full py-10 pb-40 lg:pb-40 z-[0] relative bg-zinc-300 dark:bg-zinc-900">
+      <div className="flex flex-col justify-center items-center w-full py-10 pb-40 z-0 relative bg-zinc-300 dark:bg-zinc-900">
         <h2 className="responsive_title_normal py-10 text-center">GALLERY</h2>
-        <div className="flex justify-center items-center gap-10 w-full flex-wrap relative ">
-          {pics?.map((picUrl: string, index: number) => {
-            return (
-              <motion.button
-                initial={{ opacity: 0, translateY: -30 }}
-                whileInView={{ opacity: 1, translateY: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index / 10 }}
-                key={"proj_pic_gallery" + index}
-                className="relative w-[80%] lg:w-[40%] aspect-video min-w-[300px] max-h-[300px] h-auto max-w-[90vw] hover:scale-[1.01] transition-all"
-                onClick={() => triggerBigPicture(index)}
-              >
-                <div className="border-2 border-black rounded-md h-[100%] aspect-video z-[-1] w-[100%] absolute left-[-15px] top-[-15px] opacity-25 dark:border-gray-50"></div>
-                <div className="border-2 border-black rounded-md h-[20px] w-[20px]  absolute right-[-10px] bottom-[50px] opacity-25 dark:border-gray-50"></div>
-                <div className="border-2 border-black rounded-md h-[20px] w-[20px]  z-[-1] absolute right-[-10px] bottom-[20px] opacity-25 dark:border-gray-50"></div>
-                <div className="border-2 border-black rounded-md h-[20px] w-[20px] absolute right-[15px] bottom-[30px] opacity-25 dark:border-gray-50"></div>
-                <Image
-                  className="rounded-xl w-full h-auto z-[1]"
-                  src={picUrl}
-                  width={1500}
-                  height={1500}
-                  alt="Mockup of the project"
-                ></Image>
-              </motion.button>
-            );
-          })}
+
+        <div
+          className="grid gap-16 px-4 md:px-12 w-full max-w-[1600px]"
+          style={{
+            gridTemplateColumns: "repeat(auto-fit, minmax(400px, 1fr))",
+          }}
+        >
+          {pics?.map((picUrl: string, index: number) => (
+            <motion.button
+              key={"proj_pic_gallery" + index}
+              initial={{ opacity: 0, translateY: -30 }}
+              whileInView={{ opacity: 1, translateY: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index / 10 }}
+              onClick={() => triggerBigPicture(index)}
+              className="relative aspect-video w-full duration-300"
+            >
+              {/* Ornamentos visuais */}
+              <div className="border-2 border-black dark:border-gray-50 rounded-md absolute -left-4 -top-4 w-full h-full opacity-20 z-[-1]" />
+              <div className="border-2 border-black dark:border-gray-50 rounded-md h-5 w-5 absolute -right-2 bottom-[50px] opacity-25" />
+              <div className="border-2 border-black dark:border-gray-50 rounded-md h-5 w-5 absolute -right-2 bottom-[20px] opacity-25 z-[-1]" />
+              <div className="border-2 border-black dark:border-gray-50 rounded-md h-5 w-5 absolute right-4 bottom-[30px] opacity-25" />
+
+              <Image
+                className="rounded-xl w-full h-full object-cover z-[1] hover:scale-105 transition-transform "
+                src={picUrl}
+                width={1500}
+                height={1500}
+                alt="Mockup of the project"
+              />
+            </motion.button>
+          ))}
         </div>
       </div>
 
