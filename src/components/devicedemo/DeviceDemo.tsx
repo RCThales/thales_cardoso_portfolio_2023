@@ -11,10 +11,19 @@ import Link from "next/link";
 import BigPic from "../bigpic/BigPic";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useLanguage } from "@/context/LanguageContext";
+import { translations } from "@/translations";
 
-const DeviceDemo = ({ url, title, cardInfo, pics }: any) => {
+const DeviceDemo = ({ url, title, cardInfo, pics, isPrivate, demoGif, demoGifMobile, projectId }: any) => {
+  const { language } = useLanguage();
+  const t = translations[language].itemPage;
+  const tCard = (translations[language].cardInfo as any)[projectId] ?? {};
   const [currentHour, setCurrentHour] = useState(getCurrentHour());
-  const [deviceMode, setDeviceMode] = useState("mobile");
+
+  // For private projects: if only a desktop GIF is provided, default to desktop
+  const initialMode =
+    isPrivate && demoGif && !demoGifMobile ? "desktop" : "mobile";
+  const [deviceMode, setDeviceMode] = useState(initialMode);
   const [bicBigPictureOpen, setBigPictureOpen] = useState(false);
   const [pictureId, setPictureId] = useState(0);
 
@@ -40,7 +49,10 @@ const DeviceDemo = ({ url, title, cardInfo, pics }: any) => {
   useEffect(() => {
     const changeNavbarWithResize = () => {
       if (window?.innerWidth <= 1000) {
-        setDeviceMode("mobile");
+        // Don't force mobile if only a desktop GIF is available
+        if (!(isPrivate && demoGif && !demoGifMobile)) {
+          setDeviceMode("mobile");
+        }
       }
     };
 
@@ -120,12 +132,10 @@ const DeviceDemo = ({ url, title, cardInfo, pics }: any) => {
           className="flex w-fit flex-col justify-center items-center max-w-[90vw] mb-20 gap-4 bg-red-600 p-5 shadow-zinc-500 dark:shadow-black shadow-md rounded-3xl"
         >
           <h3 className="text-xl bg-red-600 rounded-xl p-4 max-w-[95vw] text-zinc-50">
-            PS: You can only test the PURCHASE feature on the actual website,
-            not on the demo below!
+            {t.batourCard}
           </h3>
           <p className="text-xl max-w-[85vw] text-zinc-50">
-            🤑To test it for free use this DEMO CREDIT CARD (click on the
-            numbers to copy)
+            {t.batourCreditCard}
           </p>
           <div className="w-[300px] max-w-[90vw] flex justify-center flex-col items-center shadow-gray-900 shadow-md bg-gradient-to-r from-red-300  via-red-500 to-red-600 rounded-md aspect-video">
             <h3
@@ -153,23 +163,39 @@ const DeviceDemo = ({ url, title, cardInfo, pics }: any) => {
         </motion.div>
       )}
 
+      {/* Rosedale HUB — private project notice */}
+      {isPrivate && (
+        <motion.div
+          initial={{ opacity: 0, translateY: -30 }}
+          whileInView={{ opacity: 1, translateY: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0 }}
+          className="flex w-fit flex-col justify-center items-center max-w-[90vw] mb-20 gap-4 bg-zinc-800 dark:bg-zinc-700 p-8 shadow-zinc-500 dark:shadow-black shadow-md rounded-3xl text-zinc-100 text-center"
+        >
+          <span className="text-5xl">🔒</span>
+          <h3 className="text-2xl font-semibold">{t.privateTitle}</h3>
+          <p className="text-lg max-w-[600px] font-light">
+            {t.privateDescription}
+          </p>
+        </motion.div>
+      )}
+
       {/* INTERACTIVE DEMOS */}
 
       <div className="flex flex-col items-center justify-center w-screen  pb-10 lg:pb-10 relative">
         {title !== "ThalesBoy Color" && (
           <>
-            <h2 className="responsive_title_normal pb-10">INTERACTIVE DEMOS</h2>
+            <h2 className="responsive_title_normal pb-10">
+              {isPrivate ? t.gifPreviewHeading : t.interactiveDemosHeading}
+            </h2>
             <p className="max-w-[70vw] text-center text-xl font-nromal">
-              PS: This device ACTUALLY works and was made by me with TAILWIND!{" "}
-              <br />
-              <br /> You can also go to the actual webiste clicking the button
-              below =)
+              {isPrivate ? t.gifPreviewSubtitle : t.interactiveDemosSubtitle}
             </p>
           </>
         )}
         <div className="flex justify-center flex-wrap items-center gap-6 p-14 pb-20 lg:pb-10">
           {/* Buttons for device */}
-          {title !== "ThalesBoy Color" && (
+          {title !== "ThalesBoy Color" && (!isPrivate || (demoGif && demoGifMobile)) && (
             <motion.button
               initial={{ opacity: 0, translateY: -30 }}
               whileInView={{ opacity: 1, translateY: 0 }}
@@ -182,11 +208,12 @@ const DeviceDemo = ({ url, title, cardInfo, pics }: any) => {
            text-zinc-100 dark:text-zync-950 whitespace-nowrap hidden"
             >
               {deviceMode === "desktop"
-                ? "Change to Mobile"
-                : "Change to Desktop"}
+                ? t.changeToMobile
+                : t.changeToDesktop}
             </motion.button>
           )}
 
+          {!isPrivate && (
           <motion.a
             initial={{ opacity: 0, translateY: -30 }}
             whileInView={{ opacity: 1, translateY: 0 }}
@@ -199,12 +226,13 @@ const DeviceDemo = ({ url, title, cardInfo, pics }: any) => {
            active:shadow-inner transition-all px-6 py-2 rounded-tl-2xl rounded-br-2xl rounded-tr-lg rounded-bl-lg
            text-zinc-800 dark:text-zync-950 whitespace-nowrap dark:text-gray-200 hover:bg-red-500 hover:text-white"
           >
-            Go To Website
+            {t.goToWebsite}
           </motion.a>
+          )}
         </div>
 
         {/* DEVICE DEMOS */}
-        {title !== "ThalesBoy Color" && (
+        {title !== "ThalesBoy Color" && (!isPrivate || demoGif || demoGifMobile) && (
           <motion.div
             initial={{ opacity: 0, translateY: -30 }}
             whileInView={{ opacity: 1, translateY: 0 }}
@@ -213,10 +241,10 @@ const DeviceDemo = ({ url, title, cardInfo, pics }: any) => {
             className="demo_wrapper pb-10 flex justify-center items-center relative"
           >
             <p className="text-3xl absolute top-[-40px] z-50 lg:top-10 font-semibold">
-              TRY ME ↓
+              {t.tryMe}
             </p>
             {/* PHONE */}
-            {deviceMode === "mobile" && (
+            {deviceMode === "mobile" && (!isPrivate || demoGifMobile || demoGif) && (
               <motion.div
                 initial={{ opacity: 0, translateY: -30 }}
                 animate={{ opacity: 1, translateY: 0 }}
@@ -258,11 +286,22 @@ const DeviceDemo = ({ url, title, cardInfo, pics }: any) => {
                 <div className="h-[120px] w-[100%] bg-white rounded-t-[70px]">
                   <div className="h-[35px] w-[80%] bg-gray-200 rounded-full absolute top-[65px] right-[50%] translate-x-[50%] flex justify-center">
                     <span className="flex justify-center items-center">
-                      {url}
+                      {isPrivate ? "🔒 private" : url}
                     </span>
                   </div>
                 </div>
-                <iframe src={url} className="w-[100%] h-[100%]"></iframe>
+                {isPrivate && (demoGifMobile || demoGif) ? (
+                  <Image
+                    src={demoGifMobile || demoGif}
+                    alt="Demo preview GIF"
+                    width={500}
+                    height={900}
+                    className="w-[100%] h-[100%] object-cover"
+                    unoptimized
+                  />
+                ) : (
+                  <iframe src={url} className="w-[100%] h-[100%]"></iframe>
+                )}
                 <div className="h-[70px] w-[100%] bg-gray-100 rounded-b-[70px] relative">
                   <Image
                     className="h-[30px] w-[30px]  absolute left-[10%] top-[10px] opacity-[0.5]"
@@ -297,7 +336,7 @@ const DeviceDemo = ({ url, title, cardInfo, pics }: any) => {
               </motion.div>
             )}
             {/* DESKTOP */}
-            {deviceMode === "desktop" && (
+            {deviceMode === "desktop" && (!isPrivate || demoGif) && (
               <motion.div
                 initial={{ opacity: 0, translateY: -30 }}
                 animate={{ opacity: 1, translateY: 0 }}
@@ -344,15 +383,26 @@ const DeviceDemo = ({ url, title, cardInfo, pics }: any) => {
                 <div className="h-[100px] w-[100%] bg-gray-300 rounded-t-[20px]">
                   <div className="h-[35px] w-[60%] bg-gray-200 rounded-xl absolute top-[45px] right-[50%] translate-x-[50%] flex justify-center">
                     <span className="flex justify-center items-center">
-                      {url}
+                      {isPrivate ? "🔒 private" : url}
                     </span>
                   </div>
                 </div>
 
-                <iframe
-                  src={url}
-                  className="w-[100%] h-[100%] rounded-b-[2%] overflow-y-auto loading_bg"
-                ></iframe>
+                {isPrivate && demoGif ? (
+                  <Image
+                    src={demoGif}
+                    alt="Demo preview GIF"
+                    width={1400}
+                    height={1080}
+                    className="w-[100%] h-[100%] rounded-b-[2%] object-cover"
+                    unoptimized
+                  />
+                ) : (
+                  <iframe
+                    src={url}
+                    className="w-[100%] h-[100%] rounded-b-[2%] overflow-y-auto loading_bg"
+                  ></iframe>
+                )}
               </motion.div>
             )}
           </motion.div>
@@ -383,7 +433,7 @@ const DeviceDemo = ({ url, title, cardInfo, pics }: any) => {
       {/* GALLERY */}
 
       <div className="flex flex-col justify-center items-center w-full py-10 pb-40 z-0 relative bg-zinc-300 dark:bg-zinc-900">
-        <h2 className="responsive_title_normal py-10 text-center">GALLERY</h2>
+        <h2 className="responsive_title_normal py-10 text-center">{t.gallery}</h2>
 
         <div
           className="grid gap-16 px-4 md:px-12 w-full max-w-[1600px]"
@@ -422,7 +472,7 @@ const DeviceDemo = ({ url, title, cardInfo, pics }: any) => {
       {/* PROJECT INFO */}
       <div className="flex flex-col items-center justify-center w-screen relative py-10">
         <h2 className="responsive_title_normal  py-10 pt-20">
-          PROJECT INFORMATION
+          {t.projectInformation}
         </h2>
         <div className="h-[5px] bg-zinc-300 dark:bg-zinc-900  absolute top-[-4px] w-screen"></div>
         <div className="absolute top-0 left-0 w-full overflow-hidden leading-0 transform">
@@ -452,10 +502,10 @@ const DeviceDemo = ({ url, title, cardInfo, pics }: any) => {
                 className=" text-[1rem] list-disc p-4"
               >
                 <span className="font-semibold uppercase">
-                  Project Overview
+                  {t.projectOverview}
                 </span>
                 <br />
-                {cardInfo.overview}
+                {tCard.overview ?? cardInfo.overview}
               </motion.li>
               <motion.li
                 initial={{ opacity: 0, translateY: -30 }}
@@ -464,11 +514,11 @@ const DeviceDemo = ({ url, title, cardInfo, pics }: any) => {
                 transition={{ duration: 0.5, delay: 0 }}
                 className="text-[1rem] list-disc p-4"
               >
-                <span className="font-semibold uppercase">My Roles</span>
+                <span className="font-semibold uppercase">{t.myRoles}</span>
                 <br />
                 <ol>
                   {cardInfo.roles.map((i: string) => {
-                    return <li key={"roles_" + url}>- {i}</li>;
+                    return <li key={"roles_" + url}> - {i}</li>;
                   })}
                 </ol>
               </motion.li>
@@ -479,7 +529,7 @@ const DeviceDemo = ({ url, title, cardInfo, pics }: any) => {
                 transition={{ duration: 0.5, delay: 0 }}
                 className="text-[1rem] list-disc p-4"
               >
-                <span className="font-semibold uppercase">Tech used</span>
+                <span className="font-semibold uppercase">{t.techUsed}</span>
                 <br />
                 <ol>
                   {cardInfo.tech.map((i: string) => {
@@ -494,21 +544,24 @@ const DeviceDemo = ({ url, title, cardInfo, pics }: any) => {
                 transition={{ duration: 0.5, delay: 0 }}
                 className=" text-[1rem] list-disc p-4"
               >
-                <span className="font-semibold uppercase">What I Achieved</span>
+                <span className="font-semibold uppercase">{t.whatIAchieved}</span>
                 <br />
-                {cardInfo.goals}
+                {tCard.goals ?? cardInfo.goals}
               </motion.li>
             </ol>
             <br />
-            <motion.span
+             {!isPrivate && (
+       <motion.span
               initial={{ opacity: 0, translateY: -30 }}
               whileInView={{ opacity: 1, translateY: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0 }}
               className="font-semibold uppercase text-2xl dark:text-zinc-300 "
             >
-              Links
+              {t.links}
             </motion.span>
+             )}
+     
             <br />
             <motion.div
               initial={{ opacity: 0, translateY: -30 }}
@@ -517,26 +570,30 @@ const DeviceDemo = ({ url, title, cardInfo, pics }: any) => {
               transition={{ duration: 0.5, delay: 0 }}
               className="flex justify-center items-center gap-10 flex-wrap"
             >
-              <Link
-                className="bg-zinc-300 dark:bg-zinc-900 w-[150px] shadow-md shadow-zinc-600 dark:shadow-black rounded-lg p-2 flex justify-center items-center hover:scale-[1.02] transition-all"
-                target="_blank"
-                href={cardInfo.repo}
-              >
-                <p className="dark:text-zinc-300 ">Github</p>
-                <LiaGithub
-                  className={"text-[5rem] dark:text-zinc-300 "}
-                ></LiaGithub>
-              </Link>{" "}
-              <Link
-                className="bg-zinc-300 w-[150px] dark:bg-zinc-900 shadow-md shadow-zinc-600 dark:shadow-black rounded-lg p-2 flex justify-center items-center hover:scale-[1.02] transition-all"
-                target="_blank"
-                href={url}
-              >
-                <p className="dark:text-zinc-300">Demo</p>
-                <MdOutlineVideogameAsset
-                  className={"text-[5rem] pl-2 dark:text-zinc-300 "}
-                ></MdOutlineVideogameAsset>
-              </Link>
+              {!isPrivate && (
+                <Link
+                  className="bg-zinc-300 dark:bg-zinc-900 w-[150px] shadow-md shadow-zinc-600 dark:shadow-black rounded-lg p-2 flex justify-center items-center hover:scale-[1.02] transition-all"
+                  target="_blank"
+                  href={cardInfo.repo}
+                >
+                  <p className="dark:text-zinc-300 ">{t.github}</p>
+                  <LiaGithub
+                    className={"text-[5rem] dark:text-zinc-300 "}
+                  ></LiaGithub>
+                </Link>
+              )}{" "}
+              {!isPrivate && (
+                <Link
+                  className="bg-zinc-300 w-[150px] dark:bg-zinc-900 shadow-md shadow-zinc-600 dark:shadow-black rounded-lg p-2 flex justify-center items-center hover:scale-[1.02] transition-all"
+                  target="_blank"
+                  href={url}
+                >
+                  <p className="dark:text-zinc-300">{t.demo}</p>
+                  <MdOutlineVideogameAsset
+                    className={"text-[5rem] pl-2 dark:text-zinc-300 "}
+                  ></MdOutlineVideogameAsset>
+                </Link>
+              )}
             </motion.div>
 
             <br />

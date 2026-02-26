@@ -1,19 +1,20 @@
 import DeviceDemo from "@/components/devicedemo/DeviceDemo";
-export default function ItemPage({ params }: any) {
+export default async function ItemPage({ params }: any) {
+  const { id } = await params;
   const title: any = {
     "0": "ThalesBoy Color",
     "1": "Batour",
     "2": "Burger Burger",
     "3": "Warm Up Guru",
-    "4": "Univartsity",
+    "4": "Rosedale HUB",
   };
 
   const url: any = {
     "0": "https://thalesboycolor.netlify.app/",
     "1": "https://batour.vercel.app/",
     "2": "https://burgerburger.vercel.app/",
-    "3": "https://warmupguru.vercel.app/",
-    "4": "https://univartsity.vercel.app/",
+    "3": "https://thalescardris.com/warmupguru",
+    "4": "/",
   };
 
   const pics: any = {
@@ -41,6 +42,12 @@ export default function ItemPage({ params }: any) {
       "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/warmupguru_menu1.png",
       "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/warmupguru_menu2.png",
       "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/warmupguru_main.png",
+    ],
+    "4": [
+      "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/rosedalehub_main.png",
+      "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/rosedalehub_2.png",
+      "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/rosedalehub_3.png",
+      "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/rosedalehub_4.png",
     ],
   };
 
@@ -93,6 +100,35 @@ export default function ItemPage({ params }: any) {
         "A system that works flawlesly with precise BPM's in order to provide an amazing experience for the user and also many customizable scales and pitches.",
       repo: "https://github.com/RCThales/WarmUp-Guru",
     },
+     "4": {
+      overview:
+        "Rosedale HUB is a platform that integrates seamlessly with HUBSPOT's API for marketing and sales automation.",
+      tech: ["Javascript | Typescript", "REACT", "Tailwind", "HUBSPOT API"],
+      roles: ["Development", "Design"],
+
+      goals:
+        "A system that works along the HUBSPOT's API without the need for a database and realtime form creation.",
+      repo: "/",
+    },
+  };
+
+  // Set isPrivate to true to hide live demo/repo links and show a GIF in the device mockup instead
+  const isPrivate: any = {
+    "0": false,
+    "1": false,
+    "2": false,
+    "3": false,
+    "4": true,
+  };
+
+  // URL of the GIF to show inside the device mockup for private projects
+  const demoGif: any = {
+    "4": "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/rosedalehub_demo.gif",
+  };
+
+  // URL of the GIF to show inside the mobile device mockup for private projects (falls back to demoGif if not set)
+  const demoGifMobile: any = {
+    "4": "",
   };
 
   return (
@@ -102,14 +138,18 @@ export default function ItemPage({ params }: any) {
         className="h-auto flex-col pt-10 w-screen flex relative min-h-screen hero_bg items-center justify-start"
       >
         <h1 className="responsive_title text-center text-zinc-950 dark:text-gray-200 z-10 p-10 font-semibold">
-          {title[params?.id]}
+          {title[id]}
         </h1>
 
         <DeviceDemo
-          cardInfo={cardInfo[params?.id]}
-          title={title[params?.id]}
-          url={url[params?.id]}
-          pics={pics[params?.id]}
+          cardInfo={cardInfo[id]}
+          title={title[id]}
+          url={url[id]}
+          pics={pics[id]}
+          isPrivate={isPrivate[id] ?? false}
+          demoGif={demoGif[id] ?? ""}
+          demoGifMobile={demoGifMobile[id] ?? ""}
+          projectId={id}
         ></DeviceDemo>
       </section>
     </main>

@@ -4,10 +4,14 @@ import React, { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/context/LanguageContext";
+import { translations } from "@/translations";
 
 const Hero = () => {
   const [nameImg, setNameImg] = useState<string>("");
   const { theme } = useTheme();
+  const { language } = useLanguage();
+  const t = translations[language].hero;
   useEffect(() => {
     const themeName = localStorage.getItem("theme");
 
@@ -40,7 +44,7 @@ const Hero = () => {
               <div className="loader"></div>
             ) : (
               <h1 className="text-[2rem] lg:text-[5rem] text-center">
-                HELLO! I am Thales
+                {t.greeting}
               </h1>
             )}
 
@@ -59,7 +63,7 @@ const Hero = () => {
               height={1000}
               alt="Thales' picture."
               src={
-                "https://portfolio-bucket-thalescardoso.s3.amazonaws.com/1707537774051.jpeg"
+                "https://portfolio-bucket-thalescardoso.s3.us-east-1.amazonaws.com/profile-pic-2026+(1).png"
               }
             ></Image>
           </motion.div>
@@ -70,10 +74,10 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="dark:text-gray-100 text-zync-950  text-center text-xl min-w-[280px] lg:text-3xl w-[100%] lg:w-[80%] pointer-events-none z[999]"
           >
-            <span className="font-semibold">Developer</span> crafting{" "}
-            <span className="italic">sleek</span>,
-            <span className="italic"> user-friendly</span>, and{" "}
-            <span className="italic">performant</span> web experiences.
+            <span className="font-semibold">{t.role}</span> {t.crafting}{" "}
+            <span className="italic">{t.sleek}</span>,
+            <span className="italic"> {t.userFriendly}</span>, {t.and}{" "}
+            <span className="italic">{t.performant}</span> {t.webExperiences}
           </motion.p>
 
           <motion.a
@@ -86,7 +90,7 @@ const Hero = () => {
              text-gray-100 dark:text-zync-950 whitespace-nowrap"
             href="#projects"
           >
-            SEE MY WORK
+            {t.cta}
           </motion.a>
         </div>
 

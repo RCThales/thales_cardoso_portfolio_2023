@@ -8,6 +8,10 @@ const nextConfig = {
       },
       {
         protocol: "https",
+        hostname: "portfolio-bucket-thalescardoso.s3.us-east-1.amazonaws.com",
+      },
+      {
+        protocol: "https",
         hostname: "https://cdn.pixabay.com",
       },
     ],

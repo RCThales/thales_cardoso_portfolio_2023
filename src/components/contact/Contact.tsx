@@ -5,8 +5,12 @@ import { MdOutlineEmail } from "react-icons/md";
 import { PiLinkedinLogoBold } from "react-icons/pi";
 import { BsGithub } from "react-icons/bs";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/context/LanguageContext";
+import { translations } from "@/translations";
 
 const Contact = () => {
+  const { language } = useLanguage();
+  const t = translations[language].contact;
   return (
     <div
       id={"contact"}
@@ -34,7 +38,7 @@ const Contact = () => {
         transition={{ duration: 0.5, delay: 0 }}
         className="responsive_title"
       >
-        Talk to me
+        {t.title}
       </motion.h4>
       <motion.p
         initial={{ opacity: 0, translateY: -30 }}
@@ -42,8 +46,7 @@ const Contact = () => {
         transition={{ duration: 0.5, delay: 0.1 }}
         className="dark:text-gray-100 text-zync-950 hero_h2 text-center p-9 w-screen lg:w-[80%] pointer-events-none z[999] font-light"
       >
-        Reach out and let&apos;s chat! Find my contact details below and drop me
-        a line.
+        {t.description}
       </motion.p>
       <motion.div
         initial={{ opacity: 0, translateY: -30 }}

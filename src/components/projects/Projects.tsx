@@ -1,7 +1,13 @@
+"use client";
+
 import React from "react";
 import DeviceGrid from "../devicegrid/DeviceGrid";
+import { useLanguage } from "@/context/LanguageContext";
+import { translations } from "@/translations";
 
 const Projects = () => {
+  const { language } = useLanguage();
+  const t = translations[language].projects;
   return (
     <section
       id="projects"
@@ -37,10 +43,10 @@ const Projects = () => {
       <div className="h-[5px] bg-zinc-200 dark:bg-zinc-900 z-[-1] absolute top-[0px] left-0 w-full"></div>
       <div>
         <h1 className="responsive_title text-zinc-950 dark:text-zinc-200 text-center pt-24 font-semibold">
-          Projects
+          {t.title}
         </h1>
         <p className="text-center pb-16 px-10 py-6 text-gray-800 dark:text-gray-200 font-light text-xl">
-          By the way, this portfolio website was coded by myself as well 😎
+          {t.subtitle}
         </p>
         {/* PROJECT 1 */}
         <DeviceGrid></DeviceGrid>

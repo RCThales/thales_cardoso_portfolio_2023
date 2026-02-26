@@ -5,10 +5,14 @@ import { useRef } from "react";
 import { useTheme } from "next-themes";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/context/LanguageContext";
+import { translations } from "@/translations";
 
 const Navbar = () => {
   const { theme, setTheme } = useTheme();
   const [updateTheme, setUpdateTheme] = useState(theme);
+  const { language, setLanguage } = useLanguage();
+  const t = translations[language].navbar;
   const navbarToggle = useRef<any>();
   const navbarWrapper = useRef<any>();
 
@@ -129,7 +133,7 @@ const Navbar = () => {
                   className="block py-2 pl-3 pr-4 text-zync-950 dark:text-gray-100 dark:text-zync-950  rounded md:bg-transparent hover:md:text-red-500 transition-all md:p-0 "
                   aria-current="page"
                 >
-                  Home
+                  {t.home}
                 </a>
               </li>
               <li>
@@ -138,7 +142,7 @@ const Navbar = () => {
                   onClick={toggleNavbar}
                   className="block py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 hover:md:text-red-500 transition-all text-zync-950 dark:text-gray-100 md:p-0 "
                 >
-                  Projects
+                  {t.projects}
                 </a>
               </li>
               <li>
@@ -147,8 +151,17 @@ const Navbar = () => {
                   onClick={toggleNavbar}
                   className="block py-2 pl-3 pr-4  rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 hover:md:text-red-500 transition-all text-zync-950 dark:text-gray-100 md:p-0"
                 >
-                  Contact
+                  {t.contact}
                 </a>
+              </li>
+              <li>
+                <button
+                  onClick={() => setLanguage(language === "en" ? "ptbr" : "en")}
+                  className="flex items-center gap-1.5 px-3 py-1.5 text-sm font-semibold rounded-lg border border-zinc-300 dark:border-zinc-600 text-zinc-700 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-all"
+                  aria-label="Toggle language"
+                >
+                  {language === "en" ? <>🇺🇸 EN</> : <>🇧🇷 PT</>}
+                </button>
               </li>
             </ul>
           </div>

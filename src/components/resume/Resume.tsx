@@ -3,8 +3,12 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaRegFileWord, FaRegFilePdf } from "react-icons/fa";
+import { useLanguage } from "@/context/LanguageContext";
+import { translations } from "@/translations";
 
 const Resume = () => {
+  const { language } = useLanguage();
+  const t = translations[language].resume;
   return (
     <div
       id={"resume"}
@@ -33,7 +37,7 @@ const Resume = () => {
         transition={{ duration: 0.5, delay: 0 }}
         className="responsive_title"
       >
-        Resumé
+        {t.title}
       </motion.h4>
       <motion.p
         initial={{ opacity: 0, translateY: -30 }}
@@ -41,8 +45,7 @@ const Resume = () => {
         transition={{ duration: 0.5, delay: 0.1 }}
         className="dark:text-gray-100 text-zync-950 hero_h2 text-center p-9 w-screen lg:w-[80%] pointer-events-none z[999] font-light"
       >
-        Get a sneak peek at my skills and experience by grabbing my resumé
-        below!
+        {t.description}
       </motion.p>
 
       <motion.div
